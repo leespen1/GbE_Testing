@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- NOTE that address base defined in ipbus_addr_decode.vhd -->
+<!-- This is a common address file for the HUB and the HTM   -->
+<!-- Some nodes doesn't exist in the HTM, see comments below -->
+
+<!-- Current Rev.  28-Aug-2018                               -->
+
+<node id="TOP">
+
+        <!-- Slave 0 : HUB/HTM 4 control + 4 status registers                   Addr : 00000000 - 00000007 -->
+  <node   id="csr"          address="0x00000000" description="control/status reg"  tags="slave">
+          <node id="control"      address="0x0"        description="control     RW reg"  /> <!-- bit allocation is defferent for hub/htm -->
+          <node id="lock"         address="0x1"        description="arbitration RW reg"  /> <!-- used to arbitrate access between multiple IPbus SW clients -->
+          <node id="leds"         address="0x2"        description="htm_leds    RW reg"  /> <!-- HUB/HTM LEDs and LEDs control -->
+          <node id="test"         address="0x3"        description="test_reg    RW reg"  /> <!-- HUB/HTM test register -->
+          <node id="module"       address="0x4"        description="module      RO reg"  /> <!-- module_type & hw_revision & fw_type & fw_version -->
+    <node id="address"      address="0x5"        description="address     RO reg"  /> <!-- shelf_addr & slot_addr & addr_to_rod_int (htm only slot_addr) -->
+    <node id="status"       address="0x6"        description="status      RO reg"  /> <!-- bit allocation is defferent for hub/htm -->
+    <node id="tmp"          address="0x7"        description="temporary   RO reg"  /> <!-- used to read internal status for tests -->
+  </node>
+
+        <!-- Slave 1 : HUB/HTM 8 RW test registers                              Addr : 00000008 - 0000000F -->
+        <node   id="testreg"      address="0x00000008" description="testregs    RW reg"  tags="slave">
+    <node id="testreg0"     address="0x0"        description="testreg0    Rw reg"  />
+    <node id="testreg1"     address="0x1"        description="testreg1    Rw reg"  />
+    <node id="testreg2"     address="0x2"        description="testreg2    Rw reg"  />
+    <node id="testreg3"     address="0x3"        description="testreg3    Rw reg"  />
+    <node id="testreg4"     address="0x4"        description="testreg4    Rw reg"  />
+    <node id="testreg5"     address="0x5"        description="testreg5    Rw reg"  />
+    <node id="testreg6"     address="0x6"        description="testreg6    Rw reg"  />
+    <node id="testreg7"     address="0x7"        description="testreg7    Rw reg"  />
+  </node>
+
+        <!-- Slave 2 : HUB/HTM monitoring packet counters, reset by any write   Addr : 00000010 - 00000011 -->
+  <node   id="pkt_ctr"      address="0x10"       description="packet counters"     tags="slave">
+          <node id="w_count"      address="0x0"        description="write counter"       />
+          <node id="r_count"      address="0x1"        description="read counter"        />
+  </node>
+
+        <!-- Slave 2 test: HUB/HTM test register                                Addr : 00000012            -->
+  <node   id="test2"        address="0x12"       description="test register"       tags="slave"/>
+
+        <!-- Slave 3 : HUB/HTM 1Kword RAM for testing - 1K array of registers   Addr : 00001000 - 000013FF -->
+  <node   id="ram"          address="0x1000" mode="block" size="0x400" description="1kword RAM"  tags="slave"/>
+
+        <!-- Slave 3 test: HUB/HTM test register                                Addr : 00001400            -->
+  <node   id="test3"        address="0x1400"     description="test register"       tags="slave"/>
+
+        <!-- Slave 4 : HUB/HTM Kword peephole RAM - 1K block RAM                Addr : 00002000 - 00002001 -->
+  <node   id="pram"         address="0x2000"     description="1kword peephole RAM" tags="slave">
+          <node id="addr"         address="0x0"        description="address counter"     />
+          <node id="data"         address="0x1"        description="data register"       />
+  </node>
+
+        <!-- Slave 4 test: HUB/HTM test register                                Addr : 00002002            -->
+  <node   id="test4"        address="0x2002"     description="test register"       tags="slave"/>
+
+
+        <!-- Slave 5 : HUB/HTM AXI4-Lite master interface to Block Design (BD)  Addr : 40000000 -->
+
+        <!-- BD :  HUB/HTM 8 GPIO test registers                                Addr : 40000000 -->
+  <node   id="gpio_0"       address="0x40000000" description="axi_gpio_0"          tags="slave">
+          <node id="gpio_data"    address="0x0"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio_tri"     address="0x4"        description="RO data register"    />
+          <node id="gpio2_data"   address="0x8"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio2_tri"    address="0xC"        description="RO data register"    />
+  </node>
+  <node   id="gpio_1"       address="0x40010000" description="axi_gpio_1"          tags="slave">
+          <node id="gpio_data"    address="0x0"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio_tri"     address="0x4"        description="RO data register"    />
+          <node id="gpio2_data"   address="0x8"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio2_tri"    address="0xC"        description="RO data register"    />
+  </node>
+  <node   id="gpio_2"       address="0x40020000" description="axi_gpio_0"          tags="slave">
+          <node id="gpio_data"    address="0x0"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio_tri"     address="0x4"        description="RO data register"    />
+          <node id="gpio2_data"   address="0x8"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio2_tri"    address="0xC"        description="RO data register"    />
+  </node>
+  <node   id="gpio_3"       address="0x40030000" description="axi_gpio_1"          tags="slave">
+          <node id="gpio_data"    address="0x0"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio_tri"     address="0x4"        description="RO data register"    />
+          <node id="gpio2_data"   address="0x8"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio2_tri"    address="0xC"        description="RO data register"    />
+  </node>
+  <node   id="gpio_4"       address="0x40040000" description="axi_gpio_0"          tags="slave">
+          <node id="gpio_data"    address="0x0"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio_tri"     address="0x4"        description="RO data register"    />
+          <node id="gpio2_data"   address="0x8"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio2_tri"    address="0xC"        description="RO data register"    />
+  </node>
+  <node   id="gpio_5"       address="0x40050000" description="axi_gpio_1"          tags="slave">
+          <node id="gpio_data"    address="0x0"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio_tri"     address="0x4"        description="RO data register"    />
+          <node id="gpio2_data"   address="0x8"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio2_tri"    address="0xC"        description="RO data register"    />
+  </node>
+  <node   id="gpio_6"       address="0x40060000" description="axi_gpio_0"          tags="slave">
+          <node id="gpio_data"    address="0x0"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio_tri"     address="0x4"        description="RO data register"    />
+          <node id="gpio2_data"   address="0x8"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio2_tri"    address="0xC"        description="RO data register"    />
+  </node>
+  <node   id="gpio_7"       address="0x40070000" description="axi_gpio_1"          tags="slave">
+          <node id="gpio_data"    address="0x0"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio_tri"     address="0x4"        description="RO data register"    />
+          <node id="gpio2_data"   address="0x8"        description="RW data register"    /> <!-- write only, read always returns zeros -->
+          <node id="gpio2_tri"    address="0xC"        description="RO data register"    />
+  </node>
+
+        <!-- Slave 5 test1: HUB/HTM test register                               Addr : 40080000            -->
+  <node   id="test5_1"      address="0x40080000" description="test register"       tags="slave"/>
+
+        <!-- BD      :  HUB/HTM I2C interface to Transmitter MiniPOD            Addr : 40800000 -->
+  <node   id="trans_mpod"   address="0x40800000" description="Trans MiniPOD"       tags="slave">
+          <node id="gie"          address="0x01C"      description="Global Int Enable"   />
+          <node id="isr"          address="0x020"      description="Int Status"          />
+          <node id="ier"          address="0x028"      description="Int Enable"          />
+          <node id="softr"        address="0x040"      description="Sort Reset"          />
+          <node id="cr"           address="0x100"      description="Control"             />
+          <node id="sr"           address="0x104"      description="Status"              />
+          <node id="tx_fifo"      address="0x108"      description="Trans FIFO"          />
+          <node id="rx_fifo"      address="0x10C"      description="Recvr FIFO"          />
+          <node id="adr"          address="0x110"      description="Slave Address"       />
+          <node id="tx_fifo_ocy"  address="0x114"      description="Trans FIFO Occup"    />
+          <node id="rx_fifo_ocy"  address="0x118"      description="Recvr FIFO Occup"    />
+          <node id="ten_adr"      address="0x11C"      description="Slave Ten Bit Addr"  />
+          <node id="rx_fifo_pirq" address="0x120"      description="Recvr FIFO Int"      />
+          <node id="gpo"          address="0x124"      description="Gen Purpose Output"  />
+          <node id="tsusta"       address="0x128"      description="Timing Parameter"    />
+          <node id="tsusto"       address="0x12C"      description="Timing Parameter"    />
+          <node id="thdsta"       address="0x130"      description="Timing Parameter"    />
+          <node id="tsudat"       address="0x134"      description="Timing Parameter"    />
+          <node id="tbuf"         address="0x138"      description="Timing Parameter"    />
+          <node id="thigh"        address="0x13C"      description="Timing Parameter"    />
+          <node id="tlow"         address="0x140"      description="Timing Parameter"    />
+          <node id="thddat"       address="0x144"      description="Timing Parameter"    />
+  </node>
+
+        <!-- Slave 5 test2: HUB/HTM test register                               Addr : 40801000            -->
+  <node   id="test5_2"      address="0x40801000" description="test register"       tags="slave"/>
+
+        <!-- BD :  HUB/HTM I2C interface to Reveiver MiniPOD                    Addr : 40810000 -->
+  <node   id="recvr_mpod"   address="0x40810000" description="Trans MiniPOD"       tags="slave">
+          <node id="gie"          address="0x01C"      description="Global Int Enable"   />
+          <node id="isr"          address="0x020"      description="Int Status"          />
+          <node id="ier"          address="0x028"      description="Int Enable"          />
+          <node id="softr"        address="0x040"      description="Sort Reset"          />
+          <node id="cr"           address="0x100"      description="Control"             />
+          <node id="sr"           address="0x104"      description="Status"              />
+          <node id="tx_fifo"      address="0x108"      description="Trans FIFO"          />
+          <node id="rx_fifo"      address="0x10C"      description="Recvr FIFO"          />
+          <node id="adr"          address="0x110"      description="Slave Address"       />
+          <node id="tx_fifo_ocy"  address="0x114"      description="Trans FIFO Occup"    />
+          <node id="rx_fifo_ocy"  address="0x118"      description="Recvr FIFO Occup"    />
+          <node id="ten_adr"      address="0x11C"      description="Slave Ten Bit Addr"  />
+          <node id="rx_fifo_pirq" address="0x120"      description="Recvr FIFO Int"      />
+          <node id="gpo"          address="0x124"      description="Gen Purpose Output"  />
+          <node id="tsusta"       address="0x128"      description="Timing Parameter"    />
+          <node id="tsusto"       address="0x12C"      description="Timing Parameter"    />
+          <node id="thdsta"       address="0x130"      description="Timing Parameter"    />
+          <node id="tsudat"       address="0x134"      description="Timing Parameter"    />
+          <node id="tbuf"         address="0x138"      description="Timing Parameter"    />
+          <node id="thigh"        address="0x13C"      description="Timing Parameter"    />
+          <node id="tlow"         address="0x140"      description="Timing Parameter"    />
+          <node id="thddat"       address="0x144"      description="Timing Parameter"    />
+  </node>
+
+        <!-- Slave 5 test3: HUB/HTM test register                               Addr : 40811000            -->
+  <node   id="test5_3"      address="0x40811000" description="test register"       tags="slave"/>
+
+        <!-- BD :  HUB only I2C interface to DC/DC Converters                   Addr : 40820000 -->
+  <node   id="hub_dcdc"     address="0x40820000" description="Hub_DCDC"            tags="slave">
+<!--          <node id="..."          address="0x..."      description="..."                 />  -->
+  </node>
+
+        <!-- Slave 5 test4: HUB/HTM test register                               Addr : 40821000            -->
+  <node   id="test5_4"      address="0x40821000" description="test register"       tags="slave"/>
+
+        <!-- BD :  HTM I2C interface to SiLab 5338A                             Addr : 40830000 -->
+  <node   id="htm_silab"    address="0x40830000" description="Trans MiniPOD"       tags="slave">
+<!--          <node id="..."          address="0x..."      description="..."                 />  -->
+  </node>
+
+        <!-- Slave 5 test5: HUB/HTM test register                               Addr : 40831000            -->
+  <node   id="test5_5"      address="0x40831000" description="test register"       tags="slave"/>
+
+        <!-- BD :  HUB only I2C interface to Switch A                           Addr : 40E00000 -->
+  <node   id="switch_a"     address="0x40E00000" description="Switch_A"            tags="slave">
+          <node id="mdioaddr"     address="0x07E4"     description="MDIO Address"        />
+          <node id="mdiowrite"    address="0x07E8"     description="MDIO Write Data"     />
+          <node id="mdioread"     address="0x07EC"     description="MDIO Read Data"      />
+          <node id="mdioctrl"     address="0x07F0"     description="MDIO Control"        />
+  </node>
+
+        <!-- Slave 5 test6: HUB/HTM test register                               Addr : 40E01000            -->
+  <node   id="test5_6"      address="0x40E01000" description="test register"       tags="slave"/>
+
+        <!-- BD :  HUB only I2C interface to Switch B                           Addr : 40E10000 -->
+  <node   id="switch_b"     address="0x40E10000" description="Switch_B"            tags="slave">
+          <node id="mdioaddr"     address="0x07E4"     description="MDIO Address"        />
+          <node id="mdiowrite"    address="0x07E8"     description="MDIO Write Data"     />
+          <node id="mdioread"     address="0x07EC"     description="MDIO Read Data"      />
+          <node id="mdioctrl"     address="0x07F0"     description="MDIO Control"        />
+  </node>
+
+        <!-- Slave 5 test7: HUB/HTM test register                               Addr : 40E11000            -->
+  <node   id="test5_7"      address="0x40E11000" description="test register"       tags="slave"/>
+
+        <!-- BD :  HUB only I2C interface to Switch C                          Addr : 40E20000 -->
+  <node   id="switch_c"     address="0x40E20000" description="Switch_C"            tags="slave">
+          <node id="mdioaddr"     address="0x07E4"     description="MDIO Address"        />
+          <node id="mdiowrite"    address="0x07E8"     description="MDIO Write Data"     />
+          <node id="mdioread"     address="0x07EC"     description="MDIO Read Data"      />
+          <node id="mdioctrl"     address="0x07F0"     description="MDIO Control"        />
+  </node>
+
+        <!-- Slave 5 test8: HUB/HTM test register                               Addr : 40E21000            -->
+  <node   id="test5_8"      address="0x40E21000" description="test register"       tags="slave"/>
+
+        <!-- BD :  HUB only AXI/I2C interface to System Monitortor              Addr : 44A00000 -->
+  <node   id="sysmon"       address="0x44A00000" description="System Monitor"      tags="slave">
+<!--          <node id="..."          address="0x..."      description="..."                 />  -->
+  </node>
+
+        <!-- Slave 5 test9: HUB/HTM test register                               Addr : 44A01000            -->
+  <node   id="test5_9"      address="0x44A01000" description="test register"       tags="slave"/>
+
+</node>
+

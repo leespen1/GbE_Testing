@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<connections>
+
+  <connection id="HUB1"   uri="chtcp-2.0://localhost:10203?target=10.0.0.65:50001" address_table="file://RegAddrHUB_v3.xml" />
+  <connection id="HUB2"   uri="chtcp-2.0://localhost:10203?target=10.0.0.66:50001" address_table="file://RegAddrHUB_v3.xml" />
+
+  <connection id="HTM3"   uri="chtcp-2.0://localhost:10203?target=10.0.0.67:50001" address_table="file://RegAddrHTM_v3.xml" />
+  <connection id="HTM4"   uri="chtcp-2.0://localhost:10203?target=10.0.0.68:50001" address_table="file://RegAddrHTM_v3.xml" />
+  <connection id="HTM5"   uri="chtcp-2.0://localhost:10203?target=10.0.0.69:50001" address_table="file://RegAddrHTM_v3.xml" />
+  <connection id="HTM6"   uri="chtcp-2.0://localhost:10203?target=10.0.0.70:50001" address_table="file://RegAddrHTM_v3.xml" />
+  <connection id="HTM7"   uri="chtcp-2.0://localhost:10203?target=10.0.0.71:50001" address_table="file://RegAddrHTM_v3.xml" />
+  <connection id="HTM8"   uri="chtcp-2.0://localhost:10203?target=10.0.0.72:50001" address_table="file://RegAddrHTM_v3.xml" />
+  <connection id="HTM9"   uri="chtcp-2.0://localhost:10203?target=10.0.0.73:50001" address_table="file://RegAddrHTM_v3.xml" />
+  <connection id="HTM10"  uri="chtcp-2.0://localhost:10203?target=10.0.0.74:50001" address_table="file://RegAddrHTM_v3.xml" />
+  <connection id="HTM11"  uri="chtcp-2.0://localhost:10203?target=10.0.0.75:50001" address_table="file://RegAddrHTM_v3.xml" />
+  <connection id="HTM12"  uri="chtcp-2.0://localhost:10203?target=10.0.0.76:50001" address_table="file://RegAddrHTM_v3.xml" />
+  <connection id="HTM13"  uri="chtcp-2.0://localhost:10203?target=10.0.0.77:50001" address_table="file://RegAddrHTM_v3.xml" />
+  <connection id="HTM14"  uri="chtcp-2.0://localhost:10203?target=10.0.0.78:50001" address_table="file://RegAddrHTM_v3.xml" />
+
+  <noconnection id="HTM4"    uri="chtcp-2.0://localhost:10203?target=10.0.0.68:50001" address_table="file://spencer_htm.xml" />
+  <noconnection id="HTM6"    uri="chtcp-2.0://localhost:10203?target=10.0.0.70:50001" address_table="file://spencer_htm.xml" />
+  <noconnection id="HTM8"    uri="chtcp-2.0://localhost:10203?target=10.0.0.72:50001" address_table="file://spencer_htm.xml" />
+  <noconnection id="HTM10"   uri="chtcp-2.0://localhost:10203?target=10.0.0.74:50001" address_table="file://spencer_htm.xml" />
+  <noconnection id="HTM12"   uri="chtcp-2.0://localhost:10203?target=10.0.0.76:50001" address_table="file://spencer_htm.xml" />
+  <noconnection id="HTM14"   uri="chtcp-2.0://localhost:10203?target=10.0.0.78:50001" address_table="file://spencer_htm.xml" />
+
+</connections>

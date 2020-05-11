@@ -1,0 +1,225 @@
+Perfsonar Testing Setup Documentation
+
+#########################
+# Central Machine Setup #
+#########################
+
+Install perfsonar-toolkit and perfsonar-centralmanagement
+    If installing both toolkit and centralmanagement, install toolkit first. Issues have arisen in the past when installing centralmanagement before toolkit,
+    though it is possible there were other causes for the issues observed.
+    
+    Follow installation instructions carefully. Especially be sure to do /usr/lib/perfsonar/scripts/configure_firewall install
+    
+(This setup can probably be done with only centralmanagement on the central machine, but by installing toolkit we can use the central machine as one of the
+test nodes if we so desire. It also lets us use pscheduler commands, which is useful for the current iteration of the throughput script. Additionally, it may
+be the case that toolkit includes packages that help manage the firewall)
+
+Setup network:
+    Edit /etc/sysconfig/network-scripts/ifcfg-em1 (or whatever the name of the ethernet port is):
+        set onboot to yes
+        add line "NM_CONTROLLED=no"
+
+Setup ntp so that this machine can be used as a server:
+####Upon further analysis, I am unsure whether some of these lines have the intended effect. It may be sufficient to just specify this machine as a ####
+####server in the ntp configuration files of the clients in order to have the machines sync properly. In any event, one can manually sync the       ####
+####machines using ntpdate after startup if they are not doing so automatically.                                                                    ####
+    Edit file at /etc/ntp.conf
+    
+    Specify some servers to sync to. Add lines:
+        "server example.server iburst"
+    
+    Specify that machines opn the local network can't configure the server or be used as peers for time sync (This line may be configured incorrectly,
+    Since I still seem to be able to use ntpdate -u to sync to clients of the server):
+        "restrict 192.168.1.0  mask 255.255.255.0 nomodify notrap"
+    
+    Since we want this machine to act as a server, not a client, make sure that the file does not contain the lines:
+        "# by default act only as a basic NTP client
+         restrict -4 default nomodify nopeer noquery notrap
+         restrict -6 default nomodify nopeer noquery notrap"
+         
+Creating a central mesh configuration file:
+    First create the configuration file in Apache configuration format. Full details of the options available when making this file can be found on the
+    perfsonar website, but it is much easier to modify an existing file to suit your own needs (I originally modified an example available on the perfsonar
+    website).
+    
+    Some helpful things to note:
+        When specifying the measurement hosts, one can specify a site block containing several host blocks. Measurement Archive blocks can be inserted in
+        both the site block and each host block. The measurement archive specified by the host block takes precedence over that of the site block. In this
+        way, one can set up a general measurement archive and then specify a different MA for certain hosts, or include commented out MA blocks in each host
+        block so that one can switch between a central MA setup and a local one by uncommenting the MA blocks.
+        
+        The format for MA blocks in this file is:
+           "<measurement_archive>
+                type  test_type
+                read_url   MA_address
+                write_url  MA_address
+            </measurement_archive>"
+            
+        There are four test types available:
+            perfsonarbuoy/bwctl, perfsonarbuoy/owamp, pinger, and traceroute
+        
+    Next, convert the configuration file to JSON. Perfsonar comes with a program that can do this. Use the command:
+        "/usr/lib/perfsonar/bin/build_json -o output_directory config_file_directory"
+        The output directory should be someplace like /var/www/html/file_name.json so that it can be read by the other machines.
+
+########### Apparently there are plans to replace the meshconfig agent (and possibly the guiagent) in newer versions of perfsonar at some point. This information may become outdated ##################
+Configuring the meshconfig gui agent:
+    Edit file at /etc/perfsonar/meshconfig-guiagent.conf
+    
+    This file contains the configuration for building the file /etc/maddash/maddash-server/maddash.yaml, which is used to construct the maddash webui,
+    from the central mesh JSON.
+    
+    Add lines:
+       "<mesh>
+            configuration_url 'central_mesh_json_url'
+        </mesh>
+
+        restart_services 1
+        use_toolkit 1"    #Confirmed to be a valid parameter
+    
+    Can also add lines:
+       "check_interval [frequency in seconds with which to check the conf url for a change in the mesh file]
+        check_config_interval [frequency in seconds with which to check for changes in this file]" 
+                            
+        These lines specify how often to look for changes to the mesh or in the meshconfig gui agent file and update the maddash.yaml file.
+        One can also force an update of the maddash.yaml file by entering "systemctl restart perfsonar-meshconfig-guiagent.service" in a terminal.
+        
+        Since by default this update happens periodically, and in my experience I have had to manually alter the maddash.yaml file to get the webserver
+        working correctly, I typically comment out the mesh block after constructing the maddash.yaml file.
+        
+Editing maddash.yaml
+
+    It is unclear why, but in my experience when I have generated a maddash.yaml file I get lines like this specifying the URL of the graph of measurements
+    between hosts:
+        "graphUrl:
+          hubpsXX:
+            default: /perfsonar-graphs/?url=%maUrl&source=%row&dest=%col&agent=%row"
+    Clearly there is an https://address_of_archive missing following "default: ". This issue occurs for all hosts, so I usually fix this using a sed command
+    in the terminal.
+
+
+Using Maddash
+
+    The Maddash webpage can be found at http://host_address/maddash-webui/
+    
+    After making changes to maddash.yaml, do "systemctl restart maddash-server" to have the changes take effect
+    If the webpage seems to be stuck loading, try "systemctl restart httpd". This has helped in the past
+
+    Can do "htpasswd /etc/maddash/maddash-webui/admin-users admin_username" in terminal to add an adminstrator to the Maddash webpage
+    
+    On the Maddash webpage go to settings -> server settings  to go to another page where you can reschedule "checks" (where the webpage is updated with the current 
+    archive results). 
+    
+Authenticating based on IP Address
+    In order for the clients to archive to an MA, they must have the proper authentication. 
+    One can authenticate with a username and password, or by IP address. We do the latter, since it is easier to authenticate many hosts this way.
+    
+    To authenticate based on IP Address, run the following commands in a terminal (of the machine of the MA you want to archive to):
+        "cd /usr/lib/esmond"
+        ". bin/activate"
+        "python esmond/manage.py add_user_ip_address example_username client_address"  #Have had to use the actual IP address, rather than an alias named in /etc/hosts
+        
+        Can also do an entire subnet instead of a single IP address        
+    
+             
+########################        
+# Client Machine Setup #
+########################
+
+Install Perfsonar-Toolkit    
+    Follow installation instructions carefully. Especially be sure to do /usr/lib/perfsonar/scripts/configure_firewall install
+
+Set up network:
+    Edit /etc/sysconfig/network-scripts/ifcfg-em1 (or whatever the name of the ethernet port is):
+        set onboot to yes
+        add line "NM_CONTROLLED=no"
+    
+Set up ntp with the central measurement archive machine as a server:
+    Make sure /etc/ntp.conf has lines:
+        "# by default act only as a basic NTP client
+         restrict -4 default nomodify nopeer noquery notrap
+         restrict -6 default nomodify nopeer noquery notrap"
+
+    Add line "server hubpsMA iburst" (use whatever the address of the central MA machine is in place of hubpsMA)
+
+    Can use command "ntpdate -u hubpsMA" in terminal to forcefully sync clocks (so you do not have to reboot, or to 
+    ensure that the clocks are properly synced). The "-u" option directs ntpdate to use an unpriveleged port for
+    outgoing packets. If the "-u" option is not used, ntpdate will usually not work and give the message "the NTP
+    socket is in use."
+        
+
+Set up meshconfig agent:
+    Edit /etc/perfsonar/meshconfig-agent.conf:
+        add lines "configure_archives 1            #allows test results to be archived to an MA specified by the central mesh
+                   use_toolkit 1                   #Definitely is a valid parameter for this file
+                   <mesh>
+                       configuration_url  http://url_of_central_mesh_json_file
+                       validate_certificate 0      #Can do certificate validation for increased security, but I have not since we are not
+                   </mesh>"                        #handling any sensitive information 
+        
+        Can also add lines "check_interval [frequency in seconds with which to check the conf url for a change in the mesh file]
+                            check_config_interval [frequency in seconds with which to check for changes in this file]" 
+                            
+        These lines specify how often to look for changes to the mesh or in the meshconfig agent file and update the meshconfig-agent-tasks file
+        the tasks file can also be updated manually by using the command "systemctl restart perfsonar-meshconfig-agent.service" in terminal.      
+                   
+Meshconfig Agent Tasks:
+    File found at /etc/perfsonar/meshconfig-agent-tasks.conf
+    Defines schedule of measurements to be run regularly by the host.
+    Also specifies MA to archive results to.
+    
+    Example MA blocks:
+        <measurement_archive>
+            database   https://localhost/esmond/perfsonar/archive/
+            type   esmond/latency
+        </measurement_archive>
+        <measurement_archive>
+            database   https://localhost/esmond/perfsonar/archive/
+            type   esmond/throughput
+        </measurement_archive>
+        <measurement_archive>
+            database   https://localhost/esmond/perfsonar/archive/
+            type   esmond/traceroute
+        </measurement_archive>
+    
+    Note that a different block is needed for different measurement types, even when specifying the same MA.
+    Do not have multiple MA blocks specifying the same measurement type and MA. This has been observed to cause measurements to double.
+    
+    MA blocks can also be inserted in a test specification block so that the results of a certain test are archived to a specific MA. This is what is done
+    when an MA is specified in the central mesh. (If an MA block is inserted outside of a test block, all measurements of the given type will be archived
+    there).
+    
+    This file should usually be generated by the meshconfig agent, and not need to be manually edited.
+    
+    
+                                   
+    
+Links:
+
+    Installation Info:
+        http://docs.perfsonar.net/install_centos.html
+        
+    List of important perfsonar files (with links to documentation):
+        http://docs.perfsonar.net/config_files.html
+
+    Configuring NTP server:
+        https://www.tecmint.com/install-ntp-server-in-centos/
+
+    Example central mesh configuration:
+        http://docs.perfsonar.net/multi_mesh_server_config.html#generating-the-configuration
+        
+    Full details of creating a central mesh configuration:
+        https://docs.perfsonar.net/config_mesh.html
+       
+    Setting up client to read central mesh configuration:   
+        http://docs.perfsonar.net/multi_mesh_autoconfig.html#meshconfig-client-configuration
+        
+    GUI agent properties:
+        http://software.es.net/maddash/mesh_config.html
+        
+    Authentication based on IP Address:
+        http://docs.perfsonar.net/multi_ma_install.html#authenticating-by-ip-address
+        
+    Potentially useful esmond information:
+        http://software.es.net/esmond/rpm_install.html#configuration
+    

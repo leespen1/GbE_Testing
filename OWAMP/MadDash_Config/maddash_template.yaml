@@ -1,0 +1,12 @@
+# Set the directory where the database will be stored
+database: /var/lib/maddash/
+##
+# Set the host where the REST server listens
+serverHost: "localhost"
+#serverHost: "hubpsma.pa.msu.edu"
+##
+# Activate http and set the port where it listens
+http:
+    port: 8881
+#serverHost: localhost
+

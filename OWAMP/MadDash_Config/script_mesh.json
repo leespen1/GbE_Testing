@@ -1,0 +1,203 @@
+{
+   "administrators": [
+      {
+         "name": "Spencer Lee"
+      }
+   ],
+   "organizations": [
+      {
+         "sites": [
+            {
+               "hosts": [
+                  {
+                     "addresses": [
+                        "hubpsma"
+                     ],
+                     "description": "PSMA"
+                  },
+                  {
+                     "addresses": [
+                        "hubps03"
+                     ],
+                     "description": "PS03"
+                  },
+                  {
+                     "addresses": [
+                        "hubps04"
+                     ],
+                     "description": "PS04"
+                  },
+                  {
+                     "addresses": [
+                        "hubps05"
+                     ],
+                     "description": "PS05"
+                  },
+                  {
+                     "addresses": [
+                        "hubps06"
+                     ],
+                     "description": "PS06"
+                  },
+                  {
+                     "addresses": [
+                        "hubps07"
+                     ],
+                     "description": "PS07"
+                  },
+                  {
+                     "addresses": [
+                        "hubps08"
+                     ],
+                     "description": "PS08"
+                  },
+                  {
+                     "addresses": [
+                        "hubps09"
+                     ],
+                     "description": "PS09"
+                  },
+                  {
+                     "addresses": [
+                        "hubps10"
+                     ],
+                     "description": "PS10"
+                  },
+                  {
+                     "addresses": [
+                        "hubps11"
+                     ],
+                     "description": "PS11"
+                  },
+                  {
+                     "addresses": [
+                        "hubps12"
+                     ],
+                     "description": "PS12"
+                  },
+                  {
+                     "addresses": [
+                        "hubps13"
+                     ],
+                     "description": "PS13"
+                  },
+                  {
+                     "addresses": [
+                        "hubps14"
+                     ],
+                     "description": "PS14"
+                  },
+                  {
+                     "addresses": [
+                        "hubps15"
+                     ],
+                     "description": "PS15"
+                  },
+                  {
+                     "addresses": [
+                        "hubps16"
+                     ],
+                     "description": "PS16"
+                  },
+                  {
+                     "addresses": [
+                        "hubps17"
+                     ],
+                     "description": "PS17"
+                  },
+                  {
+                     "addresses": [
+                        "hubps18"
+                     ],
+                     "description": "PS18"
+                  },
+                  {
+                     "addresses": [
+                        "hubps19"
+                     ],
+                     "description": "PS19"
+                  },
+                  {
+                     "addresses": [
+                        "hubps20"
+                     ],
+                     "description": "PS20"
+                  },
+                  {
+                     "addresses": [
+                        "hubps21"
+                     ],
+                     "description": "PS21"
+                  },
+                  {
+                     "addresses": [
+                        "hubps22"
+                     ],
+                     "description": "PS22"
+                  }
+               ],
+               "measurement_archives": [
+                  {
+                     "write_url": "https://hubpsma/esmond/perfsonar/archive/",
+                     "type": "perfsonarbuoy/bwctl",
+                     "read_url": "https://hubpsma/esmond/perfsonar/archive/"
+                  },
+                  {
+                     "write_url": "https://hubpsma/esmond/perfsonar/archive/",
+                     "type": "perfsonarbuoy/owamp",
+                     "read_url": "https://hubpsma/esmond/perfsonar/archive/"
+                  },
+                  {
+                     "write_url": "https://hubpsma/esmond/perfsonar/archive/",
+                     "type": "traceroute",
+                     "read_url": "https://hubpsma/esmond/perfsonar/archive/"
+                  },
+                  {
+                     "write_url": "https://hubpsma/esmond/perfsonar/archive/",
+                     "type": "pinger",
+                     "read_url": "https://hubpsma/esmond/perfsonar/archive/"
+                  }
+               ]
+            }
+         ],
+         "description": "Hub Testing"
+      }
+   ],
+   "tests": [
+      {
+         "parameters": {
+            "sample_count": "6000",
+            "packet_interval": "0.1",
+            "type": "perfsonarbuoy/owamp",
+            "force_bidirectional": "1",
+            "bucket_width": "0.0001",
+            "session_count": "6000",
+            "loss_threshold": "60",
+            "packet_padding": "1450"
+         },
+         "members": {
+            "type": "mesh",
+            "members": [
+               "hubps03",
+               "hubps04",
+               "hubps05",
+               "hubps06",
+               "hubps07",
+               "hubps08",
+               "hubps09",
+               "hubps10",
+               "hubps11",
+               "hubps12",
+               "hubps13",
+               "hubps14",
+               "hubps15",
+               "hubps16",
+               "hubps17",
+               "hubps18"
+            ]
+         },
+         "description": "OWAMP Testing"
+      }
+   ],
+   "description": "HUB Testing Mesh"
+}

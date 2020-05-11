@@ -1,0 +1,203 @@
+##################################################################################
+#                 OWAMP Test for May 09, 2020                                    #
+#                 Serial No. 27                                                  #
+#                 Version: v1p4                                                  #
+##################################################################################
+
+Intiating OWAMP test with the following paramters
+  Clear schedules: False
+  Restart pschdeuler daemons on each host: True
+  Check routes: False
+  Packet Padding: 1450
+  Packet Interval: 0.1
+  Hosts: 
+    hubps03
+    hubps04
+    hubps05
+    hubps06
+    hubps07
+    hubps08
+    hubps09
+    hubps10
+    hubps11
+    hubps12
+    hubps13
+    hubps14
+    hubps15
+    hubps16
+    hubps18
+
+==================================================================================
+[Sat May  9 13:34:11 2020] Clearing central mesh
+Mesh succesfully cleared.
+
+[Sat May  9 13:34:11 2020] Restarting pscheduler daemons
+Pscheduler runner, archiver, scheduler, and ticker daemons successfully restarted on all hosts.
+
+[Sat May  9 13:34:29 2020] Restarting mesh configuration daemons
+Mesh Configuration daemons successfully restarted on all hosts.
+
+[Sat May  9 13:34:51 2020] Creating and publishing mesh
+Mesh succesfully created and published
+
+[Sat May  9 13:34:51 2020] Configuring MadDash
+MadDash succesfully configured
+
+[Sat May  9 13:35:03 2020] Restarting mesh configuration daemons
+Mesh Configuration daemons successfully restarted on all hosts.
+
+Mesh Published: 
+
+{
+   "organizations": [
+      {
+         "sites": [
+            {
+               "hosts": [
+                  {
+                     "addresses": [
+                        "hubpsma"
+                     ],
+                     "description": "PSMA"
+                  },
+                  {
+                     "addresses": [
+                        "hubps03"
+                     ],
+                     "description": "PS03"
+                  },
+                  {
+                     "addresses": [
+                        "hubps04"
+                     ],
+                     "description": "PS04"
+                  },
+                  {
+                     "addresses": [
+                        "hubps05"
+                     ],
+                     "description": "PS05"
+                  },
+                  {
+                     "addresses": [
+                        "hubps06"
+                     ],
+                     "description": "PS06"
+                  },
+                  {
+                     "addresses": [
+                        "hubps07"
+                     ],
+                     "description": "PS07"
+                  },
+                  {
+                     "addresses": [
+                        "hubps08"
+                     ],
+                     "description": "PS08"
+                  },
+                  {
+                     "addresses": [
+                        "hubps09"
+                     ],
+                     "description": "PS09"
+                  },
+                  {
+                     "addresses": [
+                        "hubps10"
+                     ],
+                     "description": "PS10"
+                  },
+                  {
+                     "addresses": [
+                        "hubps11"
+                     ],
+                     "description": "PS11"
+                  },
+                  {
+                     "addresses": [
+                        "hubps12"
+                     ],
+                     "description": "PS12"
+                  },
+                  {
+                     "addresses": [
+                        "hubps13"
+                     ],
+                     "description": "PS13"
+                  },
+                  {
+                     "addresses": [
+                        "hubps14"
+                     ],
+                     "description": "PS14"
+                  },
+                  {
+                     "addresses": [
+                        "hubps15"
+                     ],
+                     "description": "PS15"
+                  },
+                  {
+                     "addresses": [
+                        "hubps16"
+                     ],
+                     "description": "PS16"
+                  },
+                  {
+                     "addresses": [
+                        "hubps18"
+                     ],
+                     "description": "PS18"
+                  }
+               ],
+               "measurement_archives": [
+                  {
+                     "write_url": "https://hubpsma/esmond/perfsonar/archive/",
+                     "type": "perfsonarbuoy/owamp",
+                     "read_url": "https://hubpsma/esmond/perfsonar/archive/"
+                  }
+               ]
+            }
+         ],
+         "description": "Hub Testing"
+      }
+   ],
+   "tests": [
+      {
+         "parameters": {
+            "sample_count": "6000",
+            "packet_interval": "0.1",
+            "type": "perfsonarbuoy/owamp",
+            "force_bidirectional": "1",
+            "bucket_width": "0.0001",
+            "packet_padding": "1450",
+            "session_count": "6000",
+            "loss_threshold": "60"
+         },
+         "members": {
+            "type": "mesh",
+            "members": [
+               "hubps03",
+               "hubps04",
+               "hubps05",
+               "hubps06",
+               "hubps07",
+               "hubps08",
+               "hubps09",
+               "hubps10",
+               "hubps11",
+               "hubps12",
+               "hubps13",
+               "hubps14",
+               "hubps15",
+               "hubps16",
+               "hubps18"
+            ]
+         },
+         "description": "OWAMP Testing"
+      }
+   ],
+   "description": "HUBSN27 Mesh"
+}
+

@@ -1,0 +1,1537 @@
+ Ping Test version V1.0 
+
+ Testing Ping to Target(s) 
+  hubps03 
+  hubps04 
+  hubps05 
+  hubps06 
+  hubps07 
+  hubps08 
+  hubps09 
+  hubps10 
+  hubps11 
+  hubps12 
+  hubps13 
+  hubps14 
+  hubps15 
+  hubps16 
+  hubps18 
+  hub1FPGA 
+  hub2FPGA 
+ Ping packet count per test = 2.0E+07 
+ Ping packet concurrency     = 4 
+ Ping packet size(s) 
+  1472 
+
+
+-------------------------------------------------
+
+Results for hubps03
+
+PING 10.0.0.103 (10.0.0.103) 1472(1500) bytes of data.
+
+--- 10.0.0.103 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1340567ms
+rtt min/avg/max/mdev = 0.142/0.202/13.154/0.029 ms, pipe 5, ipg/ewma 0.067/0.205 ms
+
+
+Time of initial ethtool report: 2020-05-11 04:34:42.406525
+Time of final ethtool report: 2020-05-11 04:57:08.001012
+
+NIC statistics:
+     rx_octets: 30363066084
+     rx_fragments: 0
+     rx_ucast_packets: 20011341
+     rx_mcast_packets: 0
+     rx_bcast_packets: 423
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 94
+     rx_xoff_pause_rcvd: 94
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 94
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30368845956
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20013677
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hubps04
+
+PING 10.0.0.104 (10.0.0.104) 1472(1500) bytes of data.
+
+--- 10.0.0.104 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1458953ms
+rtt min/avg/max/mdev = 0.141/0.206/15.606/0.032 ms, pipe 5, ipg/ewma 0.072/0.220 ms
+
+
+Time of initial ethtool report: 2020-05-11 04:57:08.001569
+Time of final ethtool report: 2020-05-11 05:21:31.978957
+
+NIC statistics:
+     rx_octets: 30363078926
+     rx_fragments: 0
+     rx_ucast_packets: 20011365
+     rx_mcast_packets: 0
+     rx_bcast_packets: 441
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 82
+     rx_xoff_pause_rcvd: 82
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 82
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30368704247
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20013540
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hubps05
+
+PING 10.0.0.105 (10.0.0.105) 1472(1500) bytes of data.
+
+--- 10.0.0.105 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1466141ms
+rtt min/avg/max/mdev = 0.141/0.207/15.159/0.030 ms, pipe 5, ipg/ewma 0.073/0.198 ms
+
+
+Time of initial ethtool report: 2020-05-11 05:21:31.979506
+Time of final ethtool report: 2020-05-11 05:46:03.216579
+
+NIC statistics:
+     rx_octets: 30362533025
+     rx_fragments: 0
+     rx_ucast_packets: 20009240
+     rx_mcast_packets: 0
+     rx_bcast_packets: 442
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 115
+     rx_xoff_pause_rcvd: 115
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 115
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30367024483
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20010927
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hubps06
+
+PING 10.0.0.106 (10.0.0.106) 1472(1500) bytes of data.
+
+--- 10.0.0.106 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1428840ms
+rtt min/avg/max/mdev = 0.141/0.207/11.526/0.028 ms, pipe 5, ipg/ewma 0.071/0.208 ms
+
+
+Time of initial ethtool report: 2020-05-11 05:46:03.217141
+Time of final ethtool report: 2020-05-11 06:09:57.186822
+
+NIC statistics:
+     rx_octets: 30363693211
+     rx_fragments: 0
+     rx_ucast_packets: 20013733
+     rx_mcast_packets: 0
+     rx_bcast_packets: 395
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 105
+     rx_xoff_pause_rcvd: 105
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 105
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30370474101
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20016246
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hubps07
+
+PING 10.0.0.107 (10.0.0.107) 1472(1500) bytes of data.
+
+--- 10.0.0.107 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1482550ms
+rtt min/avg/max/mdev = 0.141/0.209/17.744/0.033 ms, pipe 5, ipg/ewma 0.074/0.203 ms
+
+
+Time of initial ethtool report: 2020-05-11 06:09:57.187377
+Time of final ethtool report: 2020-05-11 06:34:44.761972
+
+NIC statistics:
+     rx_octets: 30362495481
+     rx_fragments: 0
+     rx_ucast_packets: 20009318
+     rx_mcast_packets: 0
+     rx_bcast_packets: 447
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 128
+     rx_xoff_pause_rcvd: 128
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 128
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30367079647
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20010998
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hubps08
+
+PING 10.0.0.108 (10.0.0.108) 1472(1500) bytes of data.
+
+--- 10.0.0.108 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1458722ms
+rtt min/avg/max/mdev = 0.142/0.208/11.176/0.026 ms, pipe 5, ipg/ewma 0.072/0.202 ms
+
+
+Time of initial ethtool report: 2020-05-11 06:34:44.762514
+Time of final ethtool report: 2020-05-11 06:59:08.506523
+
+NIC statistics:
+     rx_octets: 30363642676
+     rx_fragments: 0
+     rx_ucast_packets: 20013626
+     rx_mcast_packets: 0
+     rx_bcast_packets: 442
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 119
+     rx_xoff_pause_rcvd: 119
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 119
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30370424740
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20016184
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hubps09
+
+PING 10.0.0.109 (10.0.0.109) 1472(1500) bytes of data.
+
+--- 10.0.0.109 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1671631ms
+rtt min/avg/max/mdev = 0.169/0.241/10.496/0.037 ms, pipe 4, ipg/ewma 0.083/0.217 ms
+
+
+Time of initial ethtool report: 2020-05-11 06:59:08.507076
+Time of final ethtool report: 2020-05-11 07:27:05.162126
+
+NIC statistics:
+     rx_octets: 30362945281
+     rx_fragments: 0
+     rx_ucast_packets: 20011083
+     rx_mcast_packets: 0
+     rx_bcast_packets: 517
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 142
+     rx_xoff_pause_rcvd: 142
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 142
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30368427508
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20013112
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hubps10
+
+PING 10.0.0.110 (10.0.0.110) 1472(1500) bytes of data.
+
+--- 10.0.0.110 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1674505ms
+rtt min/avg/max/mdev = 0.171/0.241/12.020/0.037 ms, pipe 5, ipg/ewma 0.083/0.229 ms
+
+
+Time of initial ethtool report: 2020-05-11 07:27:05.162680
+Time of final ethtool report: 2020-05-11 07:55:04.692137
+
+NIC statistics:
+     rx_octets: 30363105561
+     rx_fragments: 0
+     rx_ucast_packets: 20011885
+     rx_mcast_packets: 0
+     rx_bcast_packets: 512
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 111
+     rx_xoff_pause_rcvd: 111
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 111
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30369201833
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20014321
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hubps11
+
+PING 10.0.0.111 (10.0.0.111) 1472(1500) bytes of data.
+
+--- 10.0.0.111 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1678438ms
+rtt min/avg/max/mdev = 0.167/0.242/11.690/0.035 ms, pipe 5, ipg/ewma 0.083/0.230 ms
+
+
+Time of initial ethtool report: 2020-05-11 07:55:04.692677
+Time of final ethtool report: 2020-05-11 08:23:08.153922
+
+NIC statistics:
+     rx_octets: 30363667917
+     rx_fragments: 0
+     rx_ucast_packets: 20013782
+     rx_mcast_packets: 0
+     rx_bcast_packets: 483
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 131
+     rx_xoff_pause_rcvd: 131
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 131
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30370524558
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20016337
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hubps12
+
+PING 10.0.0.112 (10.0.0.112) 1472(1500) bytes of data.
+
+--- 10.0.0.112 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1687549ms
+rtt min/avg/max/mdev = 0.169/0.243/11.566/0.037 ms, pipe 5, ipg/ewma 0.084/0.237 ms
+
+
+Time of initial ethtool report: 2020-05-11 08:23:08.154473
+Time of final ethtool report: 2020-05-11 08:51:20.727244
+
+NIC statistics:
+     rx_octets: 30363574619
+     rx_fragments: 0
+     rx_ucast_packets: 20013613
+     rx_mcast_packets: 0
+     rx_bcast_packets: 519
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 134
+     rx_xoff_pause_rcvd: 134
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 134
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30370524878
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20016333
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hubps13
+
+PING 10.0.0.113 (10.0.0.113) 1472(1500) bytes of data.
+
+--- 10.0.0.113 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1696420ms
+rtt min/avg/max/mdev = 0.170/0.247/15.600/0.038 ms, pipe 5, ipg/ewma 0.084/0.226 ms
+
+
+Time of initial ethtool report: 2020-05-11 08:51:20.727810
+Time of final ethtool report: 2020-05-11 09:19:42.171646
+
+NIC statistics:
+     rx_octets: 30363628731
+     rx_fragments: 0
+     rx_ucast_packets: 20013721
+     rx_mcast_packets: 0
+     rx_bcast_packets: 479
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 142
+     rx_xoff_pause_rcvd: 142
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 142
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30370493666
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20016300
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hubps14
+
+PING 10.0.0.114 (10.0.0.114) 1472(1500) bytes of data.
+
+--- 10.0.0.114 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1668903ms
+rtt min/avg/max/mdev = 0.170/0.242/11.994/0.033 ms, pipe 5, ipg/ewma 0.083/0.291 ms
+
+
+Time of initial ethtool report: 2020-05-11 09:19:42.172196
+Time of final ethtool report: 2020-05-11 09:47:36.098858
+
+NIC statistics:
+     rx_octets: 30363202665
+     rx_fragments: 0
+     rx_ucast_packets: 20012078
+     rx_mcast_packets: 0
+     rx_bcast_packets: 517
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 146
+     rx_xoff_pause_rcvd: 146
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 146
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30369213353
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20014319
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hubps15
+
+PING 10.0.0.115 (10.0.0.115) 1472(1500) bytes of data.
+
+--- 10.0.0.115 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1678244ms
+rtt min/avg/max/mdev = 0.170/0.243/10.106/0.032 ms, pipe 5, ipg/ewma 0.083/0.232 ms
+
+
+Time of initial ethtool report: 2020-05-11 09:47:36.099410
+Time of final ethtool report: 2020-05-11 10:15:39.367656
+
+NIC statistics:
+     rx_octets: 30362874392
+     rx_fragments: 0
+     rx_ucast_packets: 20010857
+     rx_mcast_packets: 0
+     rx_bcast_packets: 519
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 105
+     rx_xoff_pause_rcvd: 105
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 105
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30368375056
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20013072
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hubps16
+
+PING 10.0.0.116 (10.0.0.116) 1472(1500) bytes of data.
+
+--- 10.0.0.116 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1449061ms
+rtt min/avg/max/mdev = 0.142/0.207/12.612/0.029 ms, pipe 5, ipg/ewma 0.072/0.191 ms
+
+
+Time of initial ethtool report: 2020-05-11 10:15:39.368214
+Time of final ethtool report: 2020-05-11 10:39:53.453500
+
+NIC statistics:
+     rx_octets: 30363705752
+     rx_fragments: 0
+     rx_ucast_packets: 20013694
+     rx_mcast_packets: 0
+     rx_bcast_packets: 398
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 116
+     rx_xoff_pause_rcvd: 116
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 116
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30370532869
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20016347
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hubps18
+
+PING 10.0.0.118 (10.0.0.118) 1472(1500) bytes of data.
+
+--- 10.0.0.118 ping statistics ---
+20000000 packets transmitted, 20000000 received, 0% packet loss, time 1003652ms
+rtt min/avg/max/mdev = 0.120/0.162/9.649/0.023 ms, pipe 5, ipg/ewma 0.050/0.171 ms
+
+
+Time of initial ethtool report: 2020-05-11 10:39:53.454097
+Time of final ethtool report: 2020-05-11 10:56:42.127634
+
+NIC statistics:
+     rx_octets: 30361269384
+     rx_fragments: 0
+     rx_ucast_packets: 20004565
+     rx_mcast_packets: 0
+     rx_bcast_packets: 326
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 16
+     rx_xoff_pause_rcvd: 15
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 15
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30363526663
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20005490
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hub1FPGA
+
+PING 10.11.30.18 (10.11.30.18) 1472(1500) bytes of data.
+
+--- 10.11.30.18 ping statistics ---
+20000000 packets transmitted, 19999994 received, 0% packet loss, time 978714ms
+rtt min/avg/max/mdev = 0.121/0.156/15.995/0.011 ms, pipe 5, ipg/ewma 0.048/0.153 ms
+
+
+Time of initial ethtool report: 2020-05-11 10:56:42.128217
+Time of final ethtool report: 2020-05-11 11:13:05.897965
+
+NIC statistics:
+     rx_octets: 30362340548
+     rx_fragments: 0
+     rx_ucast_packets: 20008775
+     rx_mcast_packets: 0
+     rx_bcast_packets: 281
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 25
+     rx_xoff_pause_rcvd: 25
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 25
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30366966696
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20010733
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
+
+
+-------------------------------------------------
+
+Results for hub2FPGA
+
+PING 10.11.30.21 (10.11.30.21) 1472(1500) bytes of data.
+
+--- 10.11.30.21 ping statistics ---
+20000000 packets transmitted, 19999997 received, 0% packet loss, time 955431ms
+rtt min/avg/max/mdev = 0.120/0.155/15.014/0.020 ms, pipe 5, ipg/ewma 0.047/0.150 ms
+
+
+Time of initial ethtool report: 2020-05-11 11:13:05.898522
+Time of final ethtool report: 2020-05-11 11:29:06.384390
+
+NIC statistics:
+     rx_octets: 30362285543
+     rx_fragments: 0
+     rx_ucast_packets: 20008797
+     rx_mcast_packets: 0
+     rx_bcast_packets: 278
+     rx_fcs_errors: 0
+     rx_align_errors: 0
+     rx_xon_pause_rcvd: 37
+     rx_xoff_pause_rcvd: 37
+     rx_mac_ctrl_rcvd: 0
+     rx_xoff_entered: 37
+     rx_frame_too_long_errors: 0
+     rx_jabbers: 0
+     rx_undersize_packets: 0
+     rx_in_length_errors: 0
+     rx_out_length_errors: 0
+     rx_64_or_less_octet_packets: 0
+     rx_65_to_127_octet_packets: 0
+     rx_128_to_255_octet_packets: 0
+     rx_256_to_511_octet_packets: 0
+     rx_512_to_1023_octet_packets: 0
+     rx_1024_to_1522_octet_packets: 0
+     rx_1523_to_2047_octet_packets: 0
+     rx_2048_to_4095_octet_packets: 0
+     rx_4096_to_8191_octet_packets: 0
+     rx_8192_to_9022_octet_packets: 0
+     tx_octets: 30366920724
+     tx_collisions: 0
+     tx_xon_sent: 0
+     tx_xoff_sent: 0
+     tx_flow_control: 0
+     tx_mac_errors: 0
+     tx_single_collisions: 0
+     tx_mult_collisions: 0
+     tx_deferred: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     tx_collide_2times: 0
+     tx_collide_3times: 0
+     tx_collide_4times: 0
+     tx_collide_5times: 0
+     tx_collide_6times: 0
+     tx_collide_7times: 0
+     tx_collide_8times: 0
+     tx_collide_9times: 0
+     tx_collide_10times: 0
+     tx_collide_11times: 0
+     tx_collide_12times: 0
+     tx_collide_13times: 0
+     tx_collide_14times: 0
+     tx_collide_15times: 0
+     tx_ucast_packets: 20010684
+     tx_mcast_packets: 0
+     tx_bcast_packets: 0
+     tx_carrier_sense_errors: 0
+     tx_discards: 0
+     tx_errors: 0
+     dma_writeq_full: 0
+     dma_write_prioq_full: 0
+     rxbds_empty: 0
+     rx_discards: 0
+     rx_errors: 0
+     rx_threshold_hit: 0
+     dma_readq_full: 0
+     dma_read_prioq_full: 0
+     tx_comp_queue_full: 0
+     ring_set_send_prod_index: 0
+     ring_status_update: 0
+     nic_irqs: 0
+     nic_avoided_irqs: 0
+     nic_tx_threshold_hit: 0
+     mbuf_lwm_thresh_hit: 0
