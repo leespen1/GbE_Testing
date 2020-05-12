@@ -52,8 +52,8 @@ ping_packet_sizes = [
 
 target_list = [
              "hubps03",
-             #"hubps04",
-             #"hubps05",
+             "hubps04",
+             "hubps05",
              #"hubps06",
              #"hubps07",
              #"hubps08",
@@ -239,6 +239,12 @@ ping_report.flush()
 ##############################################################################
 # start test
 
+results_dict = {}
+for packet_size in ping_packet_sizes:
+    results_dict[packet_size] = {}
+    for target in target_list:
+        results_dict[packet_size][target] = {}
+
 for target in target_list:
 
   try:
@@ -265,6 +271,32 @@ for target in target_list:
 
       time.sleep(5) #Added a 5 second delay. Otherwise I wasn't getting any change between ethtool reports
 
+      ping_stdout_lines = ping_stdout.split("\n")
+
+      ping_statistics_1 = ping_stdout_lines[3].split(" ")
+      packets_transmitted = int(ping_statistics_1[0])
+      packets_received = int(ping_statistics_1[3])
+      packets_dropped = packets_transmitted - packets_received
+      # time_taken will be in minutes
+      time_taken = str(int(ping_statistics_1[9][:-2])/3600) + " m"
+
+      ping_statistics_2 = ping_stdout_lines[4].split(" ")
+      rtt_info = ping_statistics_2[3]
+
+      results_dict[packet_size][target]["tx"] = packets_transmitted
+      results_dict[packet_size][target]["rx"] = packets_received
+      results_dict[packet_size][target]["dropped"] = packets_dropped
+      results_dict[packet_size][target]["time"] = time_taken
+      results_dict[packet_size][target]["rtt"] = rtt_info
+
+      """
+      # Example ping_stdout
+      PING 10.0.0.103 (10.0.0.103) 1472(1500) bytes of data.
+      
+      --- 10.0.0.103 ping statistics ---
+      10 packets transmitted, 10 received, 0% packet loss, time 0ms
+      rtt min/avg/max/mdev = 0.295/0.342/0.385/0.034 ms, pipe 4, ipg/ewma 0.103/0.345 ms
+      """
 
       #Get final ethtool report
       pipe = Popen("ethtool -S %s" % private_nic, shell=True, stdout=PIPE, stderr=PIPE)
@@ -312,8 +344,47 @@ for target in target_list:
     show_exc_info (ping_report)
     print " Exception while pinging %s, continuing " % target
 
+# Create table of results
+ping_report.write("\n\n\n")
+
+data_row_format = "|{:^10}|{:^20}|{:^12}|{:^30}|\n"
+filler_row = "+{}+{}+{}+{}+\n".format("-"*10, "-"*20, "-"*12, "-"*30) 
+
+for packet_size in ping_packet_sizes:
+    header = "#"*77 + "\n"
+    header += "#" + " "*75 + "#\n"
+    header += "#{:^75}#\n".format("Results for Packet Size: {} Bytes".format(packet_size))
+    header += "#" + " "*75 + "#\n"
+    header += "#"*77 + "\n\n"
+    ping_report.write(header)
+    ping_report.write(filler_row)
+    ping_report.write(data_row_format.format("Device", "Packets Dropped", "Time Taken", "RTT min/avg/mav/mdev"))
+
+    for target in target_list:
+        data_dict = results_dict[packet_size][target]
+        data_row = data_row_format.format(target, data_dict["dropped"],
+                                          data_dict["time"], data_dict["rtt"] + " ms")
+        ping_report.write(filler_row)
+        ping_report.write(data_row)
+
+ping_report.write(filler_row)
+
+ping_report.flush()
+
+
 
 ping_report.close()
 
 
+
+
+
+"""
+# Example ping_stdout
+PING 10.0.0.103 (10.0.0.103) 1472(1500) bytes of data.
+
+--- 10.0.0.103 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.295/0.342/0.385/0.034 ms, pipe 4, ipg/ewma 0.103/0.345 ms
+"""
 

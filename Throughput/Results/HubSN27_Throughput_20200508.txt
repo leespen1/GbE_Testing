@@ -1,0 +1,616 @@
+##################################################################################
+#                 Throughput Test for May 08, 2020                               #
+#                 Serial No. 14                                                  #
+##################################################################################
+
+Running throughput test with the following parameters:
+  Log Path: Results/HubSN27_Throughput_20200508.txt
+  Throughput Measurement Duration: PT5M
+  Minimum Bandwidth Requirement: 900 Mbits/sec
+  Maximum Bandwidth Requirement: 1000 Mbits/sec
+  Clear schedules before each measurement: True
+  Restart pscheduler runner, scheduler, archiver, and ticker daemons at start of test: True
+  Test Listing:
+    (['hubps15'], ['hubps03', 'hubps04', 'hubps05', 'hubps06'])
+    (['hubps16'], ['hubps07', 'hubps08', 'hubps09', 'hubps10'])
+    (['hubps18'], ['hubps11', 'hubps12', 'hubps13', 'hubps14'])
+==================================================================================
+ Test Results for node hubps03
+==================================================================================
+[Fri May  8 17:04:51 2020] Performing test between hubps15 and hubps03
+Test Results for connection from hubps15 to hubps03: 
+[Fri May  8 17:04:51 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 17:04:55 2020] Running Forward Test
+The average throughput from hubps15 to hubps03 was: 934.5 Mbits/s. 
+The minimum throughput from hubps15 to hubps03 was: 933.2 Mbits/s. 
+The maximum throughput from hubps15 to hubps03 was: 935.4 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps15 to hubps03 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934492093.4747789,
+   "start": 0,
+   "end": 299.9996268749237,
+   "throughput-bytes": 35043409920,
+   "retransmits": 0
+}
+
+----------------------------------------------------------------------------------
+Test Results for connection from hubps03 to hubps15: 
+[Fri May  8 17:10:27 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 17:10:31 2020] Running Reverse Test
+The average throughput from hubps03 to hubps15 was: 934.5 Mbits/s. 
+The minimum throughput from hubps03 to hubps15 was: 933.2 Mbits/s. 
+The maximum throughput from hubps03 to hubps15 was: 935.4 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps03 to hubps15 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934492005.8399025,
+   "start": 0,
+   "end": 299.99965500831604,
+   "throughput-bytes": 35043409920,
+   "retransmits": 0
+}
+
+==================================================================================
+ Test Results for node hubps04
+==================================================================================
+[Fri May  8 17:16:05 2020] Performing test between hubps15 and hubps04
+Test Results for connection from hubps15 to hubps04: 
+[Fri May  8 17:16:05 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 17:16:08 2020] Running Forward Test
+The average throughput from hubps15 to hubps04 was: 934.5 Mbits/s. 
+The minimum throughput from hubps15 to hubps04 was: 933.2 Mbits/s. 
+The maximum throughput from hubps15 to hubps04 was: 935.3 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps15 to hubps04 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934526593.7497617,
+   "start": 0,
+   "end": 299.9997720718384,
+   "throughput-bytes": 35044720640,
+   "retransmits": 0
+}
+
+----------------------------------------------------------------------------------
+Test Results for connection from hubps04 to hubps15: 
+[Fri May  8 17:21:41 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 17:21:45 2020] Running Reverse Test
+The average throughput from hubps04 to hubps15 was: 934.5 Mbits/s. 
+The minimum throughput from hubps04 to hubps15 was: 933.2 Mbits/s. 
+The maximum throughput from hubps04 to hubps15 was: 935.4 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps04 to hubps15 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934459753.5153878,
+   "start": 0,
+   "end": 299.9987881183624,
+   "throughput-bytes": 35042099200,
+   "retransmits": 0
+}
+
+==================================================================================
+ Test Results for node hubps05
+==================================================================================
+[Fri May  8 17:27:17 2020] Performing test between hubps15 and hubps05
+Test Results for connection from hubps15 to hubps05: 
+[Fri May  8 17:27:17 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 17:27:21 2020] Running Forward Test
+The average throughput from hubps15 to hubps05 was: 934.5 Mbits/s. 
+The minimum throughput from hubps15 to hubps05 was: 933.2 Mbits/s. 
+The maximum throughput from hubps15 to hubps05 was: 935.3 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps15 to hubps05 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934491569.8937699,
+   "start": 0,
+   "end": 299.999794960022,
+   "throughput-bytes": 35043409920,
+   "retransmits": 0
+}
+
+----------------------------------------------------------------------------------
+Test Results for connection from hubps05 to hubps15: 
+[Fri May  8 17:32:53 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 17:32:57 2020] Running Reverse Test
+The average throughput from hubps05 to hubps15 was: 934.5 Mbits/s. 
+The minimum throughput from hubps05 to hubps15 was: 933.2 Mbits/s. 
+The maximum throughput from hubps05 to hubps15 was: 935.3 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps05 to hubps15 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934491308.474819,
+   "start": 0,
+   "end": 299.9998788833618,
+   "throughput-bytes": 35043409920,
+   "retransmits": 0
+}
+
+==================================================================================
+ Test Results for node hubps06
+==================================================================================
+[Fri May  8 17:38:30 2020] Performing test between hubps15 and hubps06
+Test Results for connection from hubps15 to hubps06: 
+[Fri May  8 17:38:30 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 17:38:34 2020] Running Forward Test
+The average throughput from hubps15 to hubps06 was: 934.5 Mbits/s. 
+The minimum throughput from hubps15 to hubps06 was: 933.2 Mbits/s. 
+The maximum throughput from hubps15 to hubps06 was: 935.3 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps15 to hubps06 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934491483.0016592,
+   "start": 0,
+   "end": 299.9998228549957,
+   "throughput-bytes": 35043409920,
+   "retransmits": 0
+}
+
+----------------------------------------------------------------------------------
+Test Results for connection from hubps06 to hubps15: 
+[Fri May  8 17:44:07 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 17:44:11 2020] Running Reverse Test
+==================================================================================
+ Test Results for node hubps07
+==================================================================================
+[Fri May  8 17:49:45 2020] Performing test between hubps16 and hubps07
+Test Results for connection from hubps16 to hubps07: 
+[Fri May  8 17:49:45 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 17:49:48 2020] Running Forward Test
+The average throughput from hubps16 to hubps07 was: 934.6 Mbits/s. 
+The minimum throughput from hubps16 to hubps07 was: 933.2 Mbits/s. 
+The maximum throughput from hubps16 to hubps07 was: 939.4 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps16 to hubps07 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934559328.542988,
+   "start": 0,
+   "end": 300.0004839897156,
+   "throughput-bytes": 35046031360,
+   "retransmits": 0
+}
+
+----------------------------------------------------------------------------------
+Test Results for connection from hubps07 to hubps16: 
+[Fri May  8 17:55:22 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 17:55:25 2020] Running Reverse Test
+The average throughput from hubps07 to hubps16 was: 934.7 Mbits/s. 
+The minimum throughput from hubps07 to hubps16 was: 933.2 Mbits/s. 
+The maximum throughput from hubps07 to hubps16 was: 939.5 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps07 to hubps16 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934666129.8937312,
+   "start": 0,
+   "end": 299.99986004829407,
+   "throughput-bytes": 35049963520,
+   "retransmits": 0
+}
+
+==================================================================================
+ Test Results for node hubps08
+==================================================================================
+[Fri May  8 18:00:58 2020] Performing test between hubps16 and hubps08
+Test Results for connection from hubps16 to hubps08: 
+[Fri May  8 18:00:58 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 18:01:02 2020] Running Forward Test
+The average throughput from hubps16 to hubps08 was: 934.2 Mbits/s. 
+The minimum throughput from hubps16 to hubps08 was: 920.7 Mbits/s. 
+The maximum throughput from hubps16 to hubps08 was: 935.4 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps16 to hubps08 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934212039.2719011,
+   "start": 0,
+   "end": 299.9997661113739,
+   "throughput-bytes": 35032924160,
+   "retransmits": 0
+}
+
+----------------------------------------------------------------------------------
+Test Results for connection from hubps08 to hubps16: 
+[Fri May  8 18:06:35 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 18:06:39 2020] Running Reverse Test
+The average throughput from hubps08 to hubps16 was: 934.1 Mbits/s. 
+The minimum throughput from hubps08 to hubps16 was: 914.3 Mbits/s. 
+The maximum throughput from hubps08 to hubps16 was: 935.3 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps08 to hubps16 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934107343.4251537,
+   "start": 0,
+   "end": 299.99971413612366,
+   "throughput-bytes": 35028992000,
+   "retransmits": 0
+}
+
+==================================================================================
+ Test Results for node hubps09
+==================================================================================
+[Fri May  8 18:12:12 2020] Performing test between hubps16 and hubps09
+Test Results for connection from hubps16 to hubps09: 
+[Fri May  8 18:12:12 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 18:12:16 2020] Running Forward Test
+The average throughput from hubps16 to hubps09 was: 934.5 Mbits/s. 
+The minimum throughput from hubps16 to hubps09 was: 933.2 Mbits/s. 
+The maximum throughput from hubps16 to hubps09 was: 935.3 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps16 to hubps09 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934491434.892287,
+   "start": 0,
+   "end": 299.9998290538788,
+   "throughput-bytes": 35043408840,
+   "retransmits": 0
+}
+
+----------------------------------------------------------------------------------
+Test Results for connection from hubps09 to hubps16: 
+[Fri May  8 18:17:49 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 18:17:53 2020] Running Reverse Test
+The average throughput from hubps09 to hubps16 was: 934.5 Mbits/s. 
+The minimum throughput from hubps09 to hubps16 was: 933.2 Mbits/s. 
+The maximum throughput from hubps09 to hubps16 was: 935.3 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps09 to hubps16 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934456380.4344783,
+   "start": 0,
+   "end": 299.9998710155487,
+   "throughput-bytes": 35042099200,
+   "retransmits": 0
+}
+
+==================================================================================
+ Test Results for node hubps10
+==================================================================================
+[Fri May  8 18:23:26 2020] Performing test between hubps16 and hubps10
+Test Results for connection from hubps16 to hubps10: 
+[Fri May  8 18:23:26 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 18:23:29 2020] Running Forward Test
+The average throughput from hubps16 to hubps10 was: 934.5 Mbits/s. 
+The minimum throughput from hubps16 to hubps10 was: 933.2 Mbits/s. 
+The maximum throughput from hubps16 to hubps10 was: 935.3 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps16 to hubps10 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934456581.7600276,
+   "start": 0,
+   "end": 299.9997789859772,
+   "throughput-bytes": 35042096000,
+   "retransmits": 0
+}
+
+----------------------------------------------------------------------------------
+Test Results for connection from hubps10 to hubps16: 
+[Fri May  8 18:29:02 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 18:29:06 2020] Running Reverse Test
+==================================================================================
+ Test Results for node hubps11
+==================================================================================
+[Fri May  8 18:34:39 2020] Performing test between hubps18 and hubps11
+Test Results for connection from hubps18 to hubps11: 
+[Fri May  8 18:34:39 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 18:34:43 2020] Running Forward Test
+The average throughput from hubps18 to hubps11 was: 934.5 Mbits/s. 
+The minimum throughput from hubps18 to hubps11 was: 933.2 Mbits/s. 
+The maximum throughput from hubps18 to hubps11 was: 937.0 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps18 to hubps11 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934491179.9933996,
+   "start": 0,
+   "end": 299.999920129776,
+   "throughput-bytes": 35043409920,
+   "retransmits": 0
+}
+
+----------------------------------------------------------------------------------
+Test Results for connection from hubps11 to hubps18: 
+[Fri May  8 18:40:15 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 18:40:19 2020] Running Reverse Test
+The average throughput from hubps11 to hubps18 was: 934.5 Mbits/s. 
+The minimum throughput from hubps11 to hubps18 was: 933.2 Mbits/s. 
+The maximum throughput from hubps11 to hubps18 was: 935.3 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps11 to hubps18 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934456688.6299839,
+   "start": 0,
+   "end": 299.9997720718384,
+   "throughput-bytes": 35042099200,
+   "retransmits": 0
+}
+
+==================================================================================
+ Test Results for node hubps12
+==================================================================================
+[Fri May  8 18:45:51 2020] Performing test between hubps18 and hubps12
+Test Results for connection from hubps18 to hubps12: 
+[Fri May  8 18:45:51 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 18:45:55 2020] Running Forward Test
+The average throughput from hubps18 to hubps12 was: 934.5 Mbits/s. 
+The minimum throughput from hubps18 to hubps12 was: 933.2 Mbits/s. 
+The maximum throughput from hubps18 to hubps12 was: 935.3 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps18 to hubps12 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934491616.6818361,
+   "start": 0,
+   "end": 299.9997799396515,
+   "throughput-bytes": 35043409920,
+   "retransmits": 0
+}
+
+----------------------------------------------------------------------------------
+Test Results for connection from hubps12 to hubps18: 
+[Fri May  8 18:51:27 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 18:51:31 2020] Running Reverse Test
+The average throughput from hubps12 to hubps18 was: 934.5 Mbits/s. 
+The minimum throughput from hubps12 to hubps18 was: 933.2 Mbits/s. 
+The maximum throughput from hubps12 to hubps18 was: 935.3 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps12 to hubps18 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934456343.3025033,
+   "start": 0,
+   "end": 299.99988293647766,
+   "throughput-bytes": 35042099200,
+   "retransmits": 0
+}
+
+==================================================================================
+ Test Results for node hubps13
+==================================================================================
+[Fri May  8 18:57:05 2020] Performing test between hubps18 and hubps13
+Test Results for connection from hubps18 to hubps13: 
+[Fri May  8 18:57:05 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 18:57:08 2020] Running Forward Test
+The average throughput from hubps18 to hubps13 was: 934.5 Mbits/s. 
+The minimum throughput from hubps18 to hubps13 was: 933.2 Mbits/s. 
+The maximum throughput from hubps18 to hubps13 was: 937.4 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps18 to hubps13 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934526871.5179886,
+   "start": 0,
+   "end": 299.9996829032898,
+   "throughput-bytes": 35044720640,
+   "retransmits": 0
+}
+
+----------------------------------------------------------------------------------
+Test Results for connection from hubps13 to hubps18: 
+[Fri May  8 19:02:42 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 19:02:45 2020] Running Reverse Test
+The average throughput from hubps13 to hubps18 was: 934.5 Mbits/s. 
+The minimum throughput from hubps13 to hubps18 was: 933.2 Mbits/s. 
+The maximum throughput from hubps13 to hubps18 was: 935.3 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps13 to hubps18 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934490289.9344919,
+   "start": 0,
+   "end": 299.99991822242737,
+   "throughput-bytes": 35043376320,
+   "retransmits": 0
+}
+
+==================================================================================
+ Test Results for node hubps14
+==================================================================================
+[Fri May  8 19:08:19 2020] Performing test between hubps18 and hubps14
+Test Results for connection from hubps18 to hubps14: 
+[Fri May  8 19:08:19 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 19:08:22 2020] Running Forward Test
+The average throughput from hubps18 to hubps14 was: 934.5 Mbits/s. 
+The minimum throughput from hubps18 to hubps14 was: 933.2 Mbits/s. 
+The maximum throughput from hubps18 to hubps14 was: 935.3 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps18 to hubps14 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934456190.318798,
+   "start": 0,
+   "end": 299.99993205070496,
+   "throughput-bytes": 35042099200,
+   "retransmits": 0
+}
+
+----------------------------------------------------------------------------------
+Test Results for connection from hubps14 to hubps18: 
+[Fri May  8 19:13:55 2020] Checking Schedules
+The schedules on all hosts are clear
+[Fri May  8 19:13:59 2020] Running Reverse Test
+The average throughput from hubps14 to hubps18 was: 934.5 Mbits/s. 
+The minimum throughput from hubps14 to hubps18 was: 933.2 Mbits/s. 
+The maximum throughput from hubps14 to hubps18 was: 935.3 Mbits/s. 
+
+The minimum throughput is above 900 Mbits/sec and the maximum throughput is below 1000 Mbits/sec.
+
+The path from hubps14 to hubps18 meets the throughput requirements
+
+Summary from raw JSON output:
+{
+   "throughput-bits": 934491584.7471237,
+   "start": 0,
+   "end": 299.9997901916504,
+   "throughput-bytes": 35043409920,
+   "retransmits": 0
+}
+
+
+==================================================================================
+Final Report 
+==================================================================================
+
+Testing for throughput above 900.0 Mbits/sec and below 1000.0 Mbits/sec
+Duration for each test: PT5M
+
+Total Number of Tests: 24
+Number of Passed Tests: 24
+Number of Skipped Tests: 0
+Number of Failed Tests: 0
+
+
+All tests passed.
+
+|-----------------------------------------------------------------|
+|        Link        | Status  | Mean Throughput | Clear Schedule | 
+|--------------------+---------+-----------------+----------------|
+| hubps15 to hubps03 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps03 to hubps15 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps15 to hubps04 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps04 to hubps15 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps15 to hubps05 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps05 to hubps15 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps15 to hubps06 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps06 to hubps15 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps16 to hubps07 | Passed  | 934.6 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps07 to hubps16 | Passed  | 934.7 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps16 to hubps08 | Passed  | 934.2 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps08 to hubps16 | Passed  | 934.1 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps16 to hubps09 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps09 to hubps16 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps16 to hubps10 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps10 to hubps16 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps18 to hubps11 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps11 to hubps18 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps18 to hubps12 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps12 to hubps18 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps18 to hubps13 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps13 to hubps18 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps18 to hubps14 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+| hubps14 to hubps18 | Passed  | 934.5 Mbits/sec |      Yes       |
+|--------------------+---------+-----------------+----------------|
+
+
+
