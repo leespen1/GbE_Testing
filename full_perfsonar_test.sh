@@ -99,47 +99,47 @@ ping_1472byte_path="../Full_Config/ping_test_1472Byte.conf"
 python ping_test.py -o ${ping_1472byte_title} --config_file ${ping_1472byte_path}
 cp ./Results/${ping_1472byte_title} ../Full_Results/
 
-# Throughput Section
-
-# Get full date/time
-now_full=$(date)
-echo "######################################################################"
-echo ""
-echo "Starting Throughput Test At Time: $now_full"
-echo ""
-echo "######################################################################"
-
-# Get Date in YYYYMMDD format
-now=$(date +'%Y%m%d')
-
-throughput_title="HubSN${hub1SN}_Throughput_${now}.txt"
-throughput_path="../Full_Config/throughput_test.conf"
-
-cd ../Throughput
-
-# First perform a 5 second test, just to make sure everything works
-python throughput_script.py -c ${throughput_path} -d PT5S
-# Perform the actual throughput test
-python throughput_script.py -o ${throughput_title} -c ${throughput_path}
-cp ./Results/${throughput_title}
-
-# OWAMP Section
-
-# Get full date/time
-now_full=$(date)
-echo "######################################################################"
-echo ""
-echo "Starting OWAMP Test At Time: $now_full"
-echo ""
-echo "######################################################################"
-
-# Get Date in YYYYMMDD format
-now=$(date +'%Y%m%d')
-
-owamp_title="HubSN${hub1SN}_OWAMP_${now}.txt"
-owamp_path="../Full_Config/OWAMP_test.conf"
-
-cd ../OWAMP
-
-python OWAMP_test.py -c ${owamp_path} -o ${owamp_title}
-cd ../
+## Throughput Section
+#
+## Get full date/time
+#now_full=$(date)
+#echo "######################################################################"
+#echo ""
+#echo "Starting Throughput Test At Time: $now_full"
+#echo ""
+#echo "######################################################################"
+#
+## Get Date in YYYYMMDD format
+#now=$(date +'%Y%m%d')
+#
+#throughput_title="HubSN${hub1SN}_Throughput_${now}.txt"
+#throughput_path="../Full_Config/throughput_test.conf"
+#
+#cd ../Throughput
+#
+## First perform a 5 second test, just to make sure everything works
+#python throughput_script.py -c ${throughput_path} -d PT5S
+## Perform the actual throughput test
+#python throughput_script.py -o ${throughput_title} -c ${throughput_path}
+#cp ./Results/${throughput_title}
+#
+## OWAMP Section
+#
+## Get full date/time
+#now_full=$(date)
+#echo "######################################################################"
+#echo ""
+#echo "Starting OWAMP Test At Time: $now_full"
+#echo ""
+#echo "######################################################################"
+#
+## Get Date in YYYYMMDD format
+#now=$(date +'%Y%m%d')
+#
+#owamp_title="HubSN${hub1SN}_OWAMP_${now}.txt"
+#owamp_path="../Full_Config/OWAMP_test.conf"
+#
+#cd ../OWAMP
+#
+#python OWAMP_test.py -c ${owamp_path} -o ${owamp_title}
+#cd ../

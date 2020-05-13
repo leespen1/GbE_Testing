@@ -34,6 +34,7 @@ Options:
  -r, --check_routes                       Check whether each host can be reached and pscheduler can be found
                                           Only restart meshconfig for those hosts on which pscheduler can be found
  -d, --restart_pscheduler_daemons         Restart pscheduler runner, archiver, ticker, and scheudler daemons on each host
+ --serial_no SERIAL_NUMBER                Serial Number of Hub. Will be used for MadDash display
     """
   return
 
@@ -193,6 +194,21 @@ if ( len (cmd_line_arg) >= 1 ) :
       restart_pscheduler_daemons = True
       i += 1
       continue
+
+    #Serial Number of Hub
+    elif (cmd_line_arg[i] == "--serial_no")
+      
+      try:
+        i += 1
+        serial_no = cmd_line_arg[i]
+        i += 1
+        continue
+
+      except:
+        print(" ** Argument for serial_no  not given; ** ")
+        serial_no = ""
+        i += 1
+        continue
 
     #Catch config_file arguement
     elif ((cmd_line_arg[i] == "-c")
