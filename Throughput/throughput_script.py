@@ -13,9 +13,9 @@ import throughput_classes as master
 def Show_Usage():
 #----------
   print """
-Usage: python throughput_script.py     -h|--help
+Usage: python throughput_script.py        -h|--help
                                           -c|--config_filename
-					  -o|--output_directory
+	                    				  -o|--output_directory
                                           -d|--duration
                                           -l|--lower_limit
                                           -u|--upper_limit
