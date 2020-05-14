@@ -278,7 +278,7 @@ for target in target_list:
       packets_received = int(ping_statistics_1[3])
       packets_dropped = packets_transmitted - packets_received
       # time_taken will be in minutes
-      time_taken = str(int(ping_statistics_1[9][:-2])/3600) + " m"
+      time_taken = str(int(ping_statistics_1[9][:-2])/60000) + " m"
 
       ping_statistics_2 = ping_stdout_lines[4].split(" ")
       rtt_info = ping_statistics_2[3]
