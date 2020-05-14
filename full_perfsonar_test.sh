@@ -173,10 +173,10 @@ then
   cd ./Throughput
   
   # First perform a 5 second test, just to make sure everything works
-  python throughput_script.py -c ${throughput_path} -d PT5S
+  python throughput_script.py -c ${throughput_path} -d PT5S --serial_no ${hub1SN}
   # Perform the actual throughput test
-  python throughput_script.py -o ${throughput_title} -c ${throughput_path}
-  cp ./Results/${throughput_title}
+  python throughput_script.py -o ${throughput_title} -c ${throughput_path} --serial_no ${hub1SN}
+  cp ./Results/${throughput_title} ../Full_Results/
 
   cd ../
 
@@ -205,6 +205,7 @@ then
   cd ./OWAMP
   
   python OWAMP_test.py -c ${owamp_path} -o ${owamp_title} --serial_no ${hub1SN}
+  cp ./Results/${owamp_title} ../Full_Results/
 
   cd ../
 fi
