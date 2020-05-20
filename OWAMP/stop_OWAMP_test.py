@@ -1,4 +1,4 @@
-import OWAMP_classes_v1p4 as master
+import OWAMP_classes as master
 import time
 
 

@@ -283,6 +283,20 @@ if ( len (cmd_line_arg) >= 1 ) :
         i += 1
         continue
 
+    #Serial Number
+    elif (cmd_line_arg[i] == "--serial_no"):
+
+      try:
+        i += 1
+        serial_no = cmd_line_arg[i]
+        i += 1
+        continue
+
+      except:
+        print(" ** Argument for serial number not given; Prompting user for serial number ** ")
+        i += 1
+        continue
+
 
     #Illegal Argument
     else:
