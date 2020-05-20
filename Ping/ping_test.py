@@ -287,7 +287,7 @@ for target in target_list:
       results_dict[packet_size][target]["rx"] = packets_received
       results_dict[packet_size][target]["dropped"] = packets_dropped
       results_dict[packet_size][target]["time"] = time_taken
-      results_dict[packet_size][target]["rtt"] = rtt_info
+      results_dict[packet_size][target]["rtt"] = rtt_info + " ms"
 
       """
       # Example ping_stdout
@@ -344,6 +344,14 @@ for target in target_list:
     show_exc_info (ping_report)
     print " Exception while pinging %s, continuing " % target
 
+    for packet_size in ping_packet_sizes :
+
+      results_dict[packet_size][target]["tx"] = "NA"
+      results_dict[packet_size][target]["rx"] = "NA"
+      results_dict[packet_size][target]["dropped"] = "NA"
+      results_dict[packet_size][target]["time"] = "NA"
+      results_dict[packet_size][target]["rtt"] = "NA"
+
 # Create table of results
 ping_report.write("\n\n\n")
 
@@ -362,8 +370,7 @@ for packet_size in ping_packet_sizes:
 
     for target in target_list:
         data_dict = results_dict[packet_size][target]
-        data_row = data_row_format.format(target, data_dict["dropped"],
-                                          data_dict["time"], data_dict["rtt"] + " ms")
+        data_row = data_row_format.format(target, data_dict["dropped"], data_dict["time"], data_dict["rtt"])
         ping_report.write(filler_row)
         ping_report.write(data_row)
 
