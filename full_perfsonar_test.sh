@@ -81,7 +81,7 @@ case $key in
 esac
 done
 
-if [ $run_all ]
+if [ "$run_all" -ne 0 ]
 then
   run_ping=1
   run_throughput=1
@@ -99,7 +99,7 @@ fi
 
 
 # Ping Section
-if [ $run_ping ]
+if [ $run_ping -ne 0 ]
 then
 
   hub
@@ -154,7 +154,7 @@ fi
 
 
 # Throughput Section
-if [ $run_throughput ]
+if [ $run_throughput -ne 0 ]
 then
   # Get full date/time
   now_full=$(date)
@@ -186,7 +186,7 @@ fi
 
 
 # OWAMP Section
-if [ $run_owamp ]
+if [ $run_owamp -ne 0 ]
 then
   # Get full date/time
   now_full=$(date)
