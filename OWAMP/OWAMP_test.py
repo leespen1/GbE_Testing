@@ -196,7 +196,7 @@ if ( len (cmd_line_arg) >= 1 ) :
       continue
 
     #Serial Number of Hub
-    elif (cmd_line_arg[i] == "--serial_no")
+    elif (cmd_line_arg[i] == "--serial_no"):
       
       try:
         i += 1
