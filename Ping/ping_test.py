@@ -32,11 +32,8 @@ private_nic="enp1s0"
 #private_nic="eth0"
 
 ping_count = 10
-#ping_count =   1000000
-#ping_count =   10000000
-#ping_count = 50000000
-
 ping_concurrency = 4
+ping_timeout = 10800
 
 ping_packet_sizes = [
 #              32,
@@ -263,16 +260,16 @@ for target in target_list:
 
       print ( "Now pinging %s with %4d byte packets at %s "  %  ( target, packet_size, str(before_time)[:16] ) )
 
-      #Do ping test
-      print "ping -A -q -c %d -s %d -l %d %s" % ( ping_count, packet_size, ping_concurrency, target_ip_dict[target] )
+      # Run ping test
+      print "ping -A -q -w %d -c %d -s %d -l %d %s" % ( ping_timeout, ping_count, packet_size, ping_concurrency, target_ip_dict[target] )
       
-      pipe= Popen("ping -A -q -c %d -s %d -l %d %s" % ( ping_count, packet_size, ping_concurrency, target_ip_dict[target] ), shell=True, stdout=PIPE, stderr=PIPE)
+      pipe = Popen("ping -A -q -w %d -c %d -s %d -l %d %s" % ( ping_timeout, ping_count, packet_size, ping_concurrency, target_ip_dict[target] ), shell=True, stdout=PIPE, stderr=PIPE)
       ping_stdout, ping_stderr = pipe.communicate()
 
       time.sleep(5) #Added a 5 second delay. Otherwise I wasn't getting any change between ethtool reports
 
+      # Parse results
       ping_stdout_lines = ping_stdout.split("\n")
-
       ping_statistics_1 = ping_stdout_lines[3].split(" ")
       packets_transmitted = int(ping_statistics_1[0])
       packets_received = int(ping_statistics_1[3])
@@ -355,8 +352,8 @@ for target in target_list:
 # Create table of results
 ping_report.write("\n\n\n")
 
-data_row_format = "|{:^10}|{:^20}|{:^12}|{:^30}|\n"
-filler_row = "+{}+{}+{}+{}+\n".format("-"*10, "-"*20, "-"*12, "-"*30) 
+data_row_format = "|{:^10}|{:^20}|{:^15}|{:^12}|{:^30}|\n"
+filler_row = "+{}+{}+{}+{}+{}+\n".format("-"*10, "-"*20, "-"*15, "-"*12, "-"*30) 
 
 for packet_size in ping_packet_sizes:
     header = "#"*77 + "\n"
@@ -366,11 +363,11 @@ for packet_size in ping_packet_sizes:
     header += "#"*77 + "\n\n"
     ping_report.write(header)
     ping_report.write(filler_row)
-    ping_report.write(data_row_format.format("Device", "Packets Dropped", "Time Taken", "RTT min/avg/mav/mdev"))
+    ping_report.write(data_row_format.format("Device", "Packets Dropped", "Packets Sent", "Time Taken", "RTT min/avg/mav/mdev"))
 
     for target in target_list:
         data_dict = results_dict[packet_size][target]
-        data_row = data_row_format.format(target, data_dict["dropped"], data_dict["time"], data_dict["rtt"])
+        data_row = data_row_format.format(target, data_dict["dropped"], "{:.2e}".format(data_dict["tx"]), data_dict["time"], data_dict["rtt"])
         ping_report.write(filler_row)
         ping_report.write(data_row)
 
