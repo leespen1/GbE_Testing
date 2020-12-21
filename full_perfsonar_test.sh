@@ -102,7 +102,6 @@ fi
 if [ $run_ping -ne 0 ]
 then
 
-  hub
   # Check that hub2SN is given (only required for ping test)
   if [ -z "$hub2SN" ]
   then
