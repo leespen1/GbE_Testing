@@ -68,6 +68,7 @@ output_filename = ""
 serial_no = ""
 packet_padding = "1450"
 packet_interval = "0.1"
+duration = 48
 version = "v1p4"
 
 
@@ -226,6 +227,19 @@ if ( len (cmd_line_arg) >= 1 ) :
         i += 1
         continue
 
+    elif (cmd_line_arg[i] == "--duration"):
+
+      try:
+        i += 1
+        duration = int(cmd_line_arg[i])
+        i += 1
+        continue
+
+      except:
+        print(" ** Argument for duration  not given; Using defaults of 48hrs ** ")
+        duration = 48
+        i += 1
+        continue
 
     else:
         print(" ** Illegal arguement '%s' ** "%(cmd_line_arg[i]))
@@ -248,7 +262,12 @@ if serial_no == "":
 
 log_path = "Results/" + output_filename
 
-pscheduler_obj = master.pScheduler_Testing(log_path, hosts_list, serial_no)
+pscheduler_obj = master.pScheduler_Testing(
+        log_path,
+        hosts_list,
+        serial_no,
+        duration_hrs = duration
+)
 
 
 log_header = ("##################################################################################\n" +
@@ -388,6 +407,7 @@ try:
   mesh_string = pscheduler_obj.create_and_publish_mesh(packet_padding, packet_interval)
   pscheduler_obj.log.write("Mesh succesfully created and published\n\n")
 except Exception as e:
+  raise e
   pscheduler_obj.log.write("Exception while creating and publishing mesh\n")
     
 

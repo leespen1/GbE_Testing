@@ -7,7 +7,8 @@ import time
 
 class pScheduler_Testing():
 
-    def __init__(self, log_path="", hosts_list = [], serial_no="XX"):
+    def __init__(self, log_path="", hosts_list = [], serial_no="XX",
+                 duration_hrs=0):
     ######
     # If check_routes is true, removes any hosts that cannot be reached or do not appear
     # to have pscheduler installed from the list of hosts
@@ -35,6 +36,7 @@ class pScheduler_Testing():
 
         self.log = Log(log_path)
         self.serial_no = serial_no
+        self.duration_hrs = int(duration_hrs)
 
 
 
@@ -288,7 +290,7 @@ class pScheduler_Testing():
                           "type" : "perfsonarbuoy/owamp",
                           "session_count" : "6000"
                         },
-                        "description" : "OWAMP Testing"
+                        "description" : "OWAMP Testing (%s hr)"%(self.duration_hrs)
                       }
                     ],
                     "description" : "HUBSN%s Mesh"%(self.serial_no)
@@ -404,7 +406,10 @@ class pScheduler_Testing():
         #Edit maddash.yaml so that graphs are displayed properly
         time.sleep(10) #There is a delay between when the guiagent is restarted and maddash.yaml is updated, so we wait before editing
         call("sed -i 's@/perfsonar-graphs@https://hubpsma.pa.msu.edu/perfsonar-graphs@g' /etc/maddash/maddash-server/maddash.yaml", shell=True)
-
+        # Replace instances of '/hubpsma/' with '.hubpsma.pa.msu.edu/'
+        call("sed -i 's@/hubpsma/@/hubpsma.pa.msu.edu/@g' /etc/maddash/maddash-server/maddash.yaml", shell=True)
+        # Check for correct duration
+        call("sed -i 's@-r [0-9]\+@-r %s@' /etc/maddash/maddash-server/maddash.yaml"%(int(60*60*self.duration_hrs)), shell=True)
         call("systemctl restart maddash-server", shell=True)
 
         return
