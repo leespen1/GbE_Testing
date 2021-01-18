@@ -98,6 +98,8 @@ target_ip_dict = {
     "htm06" : "10.0.0.70", "htm07" : "10.0.0.71", "htm08" : "10.0.0.72",
     "htm09" : "10.0.0.73", "htm10" : "10.0.0.74", "htm11" : "10.0.0.75",
     "htm12" : "10.0.0.76", "htm13" : "10.0.0.77", "htm14" : "10.0.0.78",
+
+    "rod1" : "10.11.30.109", "rod2" : "10.11.30.20",
 }
 
 
@@ -132,7 +134,7 @@ if ( len (cmd_line_arg) >= 1 ) :
         try:
           execfile (config_filename)
         except:
-          print ("** Failure executing <%s> **"%(config_filename))
+          print("** Failure executing <%s> **"%(config_filename))
           Show_Usage()
 
         i += 1
@@ -219,26 +221,26 @@ if ( len (cmd_line_arg) >= 1 ) :
 ##############################################################################
 # report scope of this test
 
-print "\n FPGA IPbus Ping Test version %s \n" % version
-print " Testing Ping to Node(s) "
-print target_list
-print " Ping packet count per test = %6.1E" % ping_count
-print " Ping packet concurrency     = %d"    % ping_concurrency
-print " Ping packet size(s)"
-print ping_packet_sizes
+print("\n FPGA IPbus Ping Test version %s \n" % version)
+print(" Testing Ping to Node(s) ")
+print(target_list)
+print(" Ping packet count per test = %6.1E" % ping_count)
+print(" Ping packet concurrency     = %d"    % ping_concurrency)
+print(" Ping packet size(s)")
+print(ping_packet_sizes)
 
 
 if output_filename == "":
   output_filename = raw_input("Input report name: ")
 ping_report = open('Results/{0}'.format(output_filename), 'a+')
 
-ping_report.write ( " Ping Test version %s \n\n" % version )
-ping_report.write ( " Testing Ping to Target(s) \n" )
+ping_report.write(" Ping Test version %s \n\n" % version)
+ping_report.write(" Testing Ping to Target(s) \n")
 for target in target_list:
-  ping_report.write ( "  %s \n" % target )
-ping_report.write ( " Ping packet count per test = %6.1E \n" % ping_count )
-ping_report.write ( " Ping packet concurrency     = %d \n"    % ping_concurrency )
-ping_report.write ( " Ping packet size(s) \n" )
+  ping_report.write ( "  %s \n" % target)
+ping_report.write(" Ping packet count per test = %6.1E \n" % ping_count)
+ping_report.write(" Ping packet concurrency     = %d \n"    % ping_concurrency)
+ping_report.write(" Ping packet size(s) \n")
 for packet_size in ping_packet_sizes :
   ping_report.write ( "  %4d \n" % packet_size )
 
@@ -269,12 +271,12 @@ for target in target_list:
       ethtool_before_stdout, ethtool_before_stderr = pipe.communicate()
       ethtool_before_lines = (ethtool_before_stdout.strip()).split('\n')
 
-      print ( "Now pinging %s with %4d byte packets at %s "  %  ( target, packet_size, str(before_time)[:16] ) )
+      print("Now pinging %s with %4d byte packets at %s "%(target, packet_size, str(before_time)[:16]))
 
       # Run ping test
-      print "ping -A -q -w %d -c %d -s %d -l %d %s" % ( ping_timeout, ping_count, packet_size, ping_concurrency, target_ip_dict[target] )
+      print("sudo ping -A -q -w %d -c %d -s %d -l %d %s"%(ping_timeout, ping_count, packet_size, ping_concurrency, target_ip_dict[target]))
       
-      pipe = Popen("ping -A -q -w %d -c %d -s %d -l %d %s" % ( ping_timeout, ping_count, packet_size, ping_concurrency, target_ip_dict[target] ), shell=True, stdout=PIPE, stderr=PIPE)
+      pipe = Popen("sudo ping -A -q -w %d -c %d -s %d -l %d %s"%(ping_timeout, ping_count, packet_size, ping_concurrency, target_ip_dict[target]), shell=True, stdout=PIPE, stderr=PIPE)
       ping_stdout, ping_stderr = pipe.communicate()
 
       time.sleep(5) #Added a 5 second delay. Otherwise I wasn't getting any change between ethtool reports
@@ -378,7 +380,11 @@ for packet_size in ping_packet_sizes:
 
     for target in target_list:
         data_dict = results_dict[packet_size][target]
-        data_row = data_row_format.format(target, data_dict["dropped"], "{:.2e}".format(data_dict["tx"]), data_dict["time"], data_dict["rtt"])
+        tx_cnt = data_dict["tx"]
+        dropped_cnt = data_dict["dropped"]
+        tbl_tx = "{:.2e}".format(tx_cnt) if isinstance(tx_cnt, int) else tx_cnt
+        tbl_dropped = "{:.2e}".format(dropped_cnt) if isinstance(dropped_cnt, int) else dropped_cnt
+        data_row = data_row_format.format(target, tbl_dropped, tbl_tx, data_dict["time"], data_dict["rtt"])
         ping_report.write(filler_row)
         ping_report.write(data_row)
 
