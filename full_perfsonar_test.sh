@@ -142,7 +142,7 @@ then
     ping_1472byte_title="HubSN${hub1SN}x${hub2SN}_Ping_1472Byte_${now}.txt"
     ping_1472byte_path="../Full_Config/ping_test_1472Byte.conf"
     
-    python ping_test.py -o ${ping_1472byte_title} --config_file ${ping_1472byte_path}
+    python ping_test.py -o ${ping_1472byte_title} --config_file ${ping_1472byte_path} --hub1SN ${hub1SN} --hub2SN ${hub2SN}
     cp ./Results/${ping_1472byte_title} ../Full_Results/
 
     cd ../

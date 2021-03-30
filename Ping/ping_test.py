@@ -104,6 +104,9 @@ target_ip_dict = {
 
 
 
+# Default Parameters
+hub1_SN = "NA"
+hub2_SN = "NA"
 
 cmd_line_arg = sys.argv[1:]
 
@@ -209,6 +212,24 @@ if ( len (cmd_line_arg) >= 1 ) :
         i += 1
         continue
 
+    #Hub1 Serial No
+    if (cmd_line_arg[i] == "--hub1SN" ):
+
+      try:
+        i += 1
+        hub1_SN = int(cmd_line_arg[i])
+        i += 1
+        continue
+
+    #Hub2 Serial No
+    if (cmd_line_arg[i] == "--hub2SN" ):
+
+      try:
+        i += 1
+        hub2_SN = int(cmd_line_arg[i])
+        i += 1
+        continue
+
     #Illegal Argument
     else:
         print(" ** Illegal argument '%s' **"%(cmd_line_arg[i]))
@@ -258,6 +279,19 @@ for packet_size in ping_packet_sizes:
 for target in target_list:
 
   try:
+
+    if target not in ("hub1FPGA", "hub2FPGA"):
+        target_ip = target_ip_dict[target]
+    elif target == "hub1FPGA":
+        try:
+            target_ip = target_ip_dict["hub%s"%(hub1_SN.zfill(2))]
+        except ValueError:
+            target__ip = target_ip_dict[target]
+    elif target == "hub2FPGA":
+        try:
+            target_ip = target_ip_dict["hub%s"%(hub2_SN.zfill(2))]
+        except ValueError:
+            target__ip = target_ip_dict[target]
 
     #For log purposes
     ping_report.write("\n\n-------------------------------------------------\n\nResults for {0}\n\n".format(target))
