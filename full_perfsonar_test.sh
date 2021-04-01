@@ -125,7 +125,7 @@ then
     ping_128byte_title="HubSN${hub1SN}x${hub2SN}_Ping_128Byte_${now}.txt"
     ping_128byte_path="../Full_Config/ping_test_128Byte.conf"
     
-    python ping_test.py -o ${ping_128byte_title} --config_file ${ping_128byte_path}
+    python ping_test.py -o ${ping_128byte_title} --config_file ${ping_128byte_path} --hub1SN ${hub1SN} --hub2SN ${hub2SN}
     cp ./Results/${ping_128byte_title} ../Full_Results/
     
     # Get full date/time
