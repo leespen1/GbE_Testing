@@ -221,12 +221,24 @@ if ( len (cmd_line_arg) >= 1 ) :
         i += 1
         continue
 
+      except:
+        print(" ** Argument for hub1SN not given; Using default ** ")
+        hub1_SN = "NA"
+        i += 1
+        continue
+
     #Hub2 Serial No
     if (cmd_line_arg[i] == "--hub2SN" ):
 
       try:
         i += 1
         hub2_SN = int(cmd_line_arg[i])
+        i += 1
+        continue
+
+      except:
+        print(" ** Argument for hub2SN not given; Using default ** ")
+        hub2_SN  = "NA"
         i += 1
         continue
 
@@ -284,14 +296,14 @@ for target in target_list:
         target_ip = target_ip_dict[target]
     elif target == "hub1FPGA":
         try:
-            target_ip = target_ip_dict["hub%s"%(hub1_SN.zfill(2))]
+            target_ip = target_ip_dict["hub%s"%(str(hub1_SN).zfill(2))]
         except ValueError:
-            target__ip = target_ip_dict[target]
+            target_ip = target_ip_dict[target]
     elif target == "hub2FPGA":
         try:
-            target_ip = target_ip_dict["hub%s"%(hub2_SN.zfill(2))]
+            target_ip = target_ip_dict["hub%s"%(str(hub2_SN).zfill(2))]
         except ValueError:
-            target__ip = target_ip_dict[target]
+            target_ip = target_ip_dict[target]
 
     #For log purposes
     ping_report.write("\n\n-------------------------------------------------\n\nResults for {0}\n\n".format(target))
@@ -308,9 +320,9 @@ for target in target_list:
       print("Now pinging %s with %4d byte packets at %s "%(target, packet_size, str(before_time)[:16]))
 
       # Run ping test
-      print("sudo ping -A -q -w %d -c %d -s %d -l %d %s"%(ping_timeout, ping_count, packet_size, ping_concurrency, target_ip_dict[target]))
+      print("sudo ping -A -q -w %d -c %d -s %d -l %d %s"%(ping_timeout, ping_count, packet_size, ping_concurrency, target_ip))
       
-      pipe = Popen("sudo ping -A -q -w %d -c %d -s %d -l %d %s"%(ping_timeout, ping_count, packet_size, ping_concurrency, target_ip_dict[target]), shell=True, stdout=PIPE, stderr=PIPE)
+      pipe = Popen("sudo ping -A -q -w %d -c %d -s %d -l %d %s"%(ping_timeout, ping_count, packet_size, ping_concurrency, target_ip), shell=True, stdout=PIPE, stderr=PIPE)
       ping_stdout, ping_stderr = pipe.communicate()
 
       time.sleep(5) #Added a 5 second delay. Otherwise I wasn't getting any change between ethtool reports
